@@ -5,11 +5,18 @@
 
 
 \usepackage{graphicx}
-\usepackage{subfigure}
 \usepackage{hyperref}
 \usepackage{rotating}
 \usepackage{float}
 \usepackage{microtype}
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{todonotes}
 
 \begin{document}
 
@@ -70,7 +77,9 @@ On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteell
 
 \section{Agenttipohjainen simulaatio (3.5)}
 
-\subsection{Laskennan teoria}
+\subsection{Katsaus teoriaan}
+
+Agenttipohjaisessa simulaatiossa mallinnetaan yhteisön toimintaa yksittäisten toimijoiden kautta. Kukin toimija, eli agentti, on yksilöllinen toimintaheuristiikka, tai prefrenssifunktio. Tämän preferenssifunktion sekä mahdollisen satunnaisfuntion avulla määritellään agentin tila seuraavalla ajanhetkellä: tila$_{t+1}$ = $\mathcal{P}($ tila$_t$ $) + \varepsilon$. Toistamalla sama simulaatio järjestelmän kaikille agenteille, voidaan määrittää järjestelmän tila ajanhetkellä $t+1$ ajanhetken $t$ perusteella. Luonnollisesti preferenssifuntio $\mathcal{P}$ voi ottaa huomioon myös muiden agenttien toimeinpiteet ja tästä syntyneen järjestelmän tilan tehdessään päätöstä tulevasta tilasta \citep[esimerkiksi][]{Bonabeau2002}.
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
@@ -98,6 +107,25 @@ Bibliograafinen analyysi
 
 Riski joutua aputieteeksi
 
+\begin{figure}
+
+%\begin{subfigure}{.6\textwidth}
+\includegraphics[width=.6\textwidth]{images/monitieteellisyys_ongelma.png} 
+\caption{Menetelmäkehityksen ero soveltajaan \citep[mukaillen][7]{Wijk2006}}
+\label{fig:domain_expert_vs_computation_specialist}
+%\end{subfigure}
+%~~
+%\begin{subfigure}{.2\textwidth}
+%\includegraphics[width=\textwidth]{images/monitieteellisyys_ongelma.png} 
+%\caption{Menetelmäkehityksen ero soveltajaan \citep[mukaillen][7]{Wijk2006}}
+%\end{subfigure}
+
+\end{figure}
+
+\citet{Wijk2006} käsittelee monitieteellistä yhteistyötä visualisoinnissa. Oman kokemuksensa pohjalta hän huomauttaa, että alan asiantuntijalla (\textit{domain expert}) ja visualisaation tutkijalla on usein erilaiset tavoitteet visualisaation kehittämisessä: kun visulisaation tutkija ensisijaisesti kehittää uusia visualisaatiomenetelmiä, niin alan asiantuntijan tavoitteena on hyödyllisen työkalun kehittäminen -- mikä voidaan saavuttaa myös perinteisillä menetelmillä. Kuvassa \ref{fig:domain_expert_vs_computation_specialist} esitän saman erottelun sovellettuna laskennalliseen yhteiskuntatieteeseen, alan asiantuntijan ja tietojenkäsittelytietelijöiden välisenä tarkasteluna.
+
+\citet{Wijk2006} jatkaa, että tavoite-eron takia yhteistyön muoto on joku seuraavista: tietojenkäsittelytieteen asiantuntija voi hänen mukaansa toimia työvälinekehittäjänä tai jatkaa tietojenkäsittelyn menetelmien kehittämistä. Tietojenkäsittelytieteen asiantuntija voi myös soveltaa käyttäjäkeskeisiä menetelmiä kehitystyössään, jolloin laskennallisia menetelmiä kehitetään yhteistyössä alan asiantuntijan kanssa. Toisaalta, tietojenkäsittelyttieteen asiantuntija voi myös itse tutustua alaan tai kehittää visualisaatiotekniikoita aiheisiin, joista hän on kiinnostunut. van Wijk kutsuu viimeistä yhteistyön muotoa mielenkiintovetoiseksi kehitystavaksi (\textit{curiosity driven}), ja nostaa esille muodon haasteen: sellaisenaan tällä toimintatavalla ei voida ratkaista aihealueen haastavimpia ongelmia. Näin laskennallisen yhteiskuntatieteen mahdollisiksi... \todo{johtopäätös: yhteiskuntatieteessä voidaan tehdä UCD tai toolsmith}
+
 \subsection{Paradigman muutos?}
 
 Kuten \citet[265]{watts11} esittääkin
@@ -123,6 +151,6 @@ Lisäksi työssä on esitelty kolmea laskennallista menetelmää tarkemmin ...
 
 \newpage
 \bibliographystyle{abbrvnat}
-\bibliography{bsc}  
+\bibliography{bsc,/Users/mnelimar/.research/library.bib}  
 
 \end{document}
