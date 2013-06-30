@@ -75,15 +75,29 @@ Määrittelen tässä työssä laskennallisen yhteiskuntatieteen menetelmiksi, m
 
 On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin Internetin \citep{adamic05,notess02} kuin elinympäristöstä kerättyjen sensoriaineistojen \citep{eagle06,oulasvirta12}, yleistyminen ja käyttöönotoot on helpottanut suurten aineistojen keräämistä. Tällöin perinteiset ei-laskennalliset menetelmät eivät välttämättä sovellu tutkimukseen, ja samaan aikaan laajat aineistot mahdollistavat aiemmin haastavina pidettyjen menetelmien käytön -- esimerkiksi verkosto-analyysin ongelma on ollut aineiston vaikea keräys \citep{a}. Tällöin myös rahoittajien korostama poikkitieteellinen lähestymistapa \citep[60]{tieteentila12} on ensinnäkin mahdollinen resurssien myötä ja toisaalta välttämätön, koska perinteiset lähestymistavat eivät käytä hyödykseen mahdollisuuksia joita laskennallisten tieteiden kehitys on luonut.
 
-\section{Agenttipohjainen simulaatio (3.5)}
+\newpage
+
+\section{Agenttipohjainen simulaatio (3)}
+
+Historiaa, johdattelua
 
 \subsection{Katsaus teoriaan}
 
-Agenttipohjaisessa simulaatiossa mallinnetaan yhteisön toimintaa yksittäisten toimijoiden kautta. Kukin toimija, eli agentti, on yksilöllinen toimintaheuristiikka, tai prefrenssifunktio. Tämän preferenssifunktion sekä mahdollisen satunnaisfuntion avulla määritellään agentin tila seuraavalla ajanhetkellä: tila$_{t+1}$ = $\mathcal{P}($ tila$_t$ $) + \varepsilon$. Toistamalla sama simulaatio järjestelmän kaikille agenteille, voidaan määrittää järjestelmän tila ajanhetkellä $t+1$ ajanhetken $t$ perusteella. Luonnollisesti preferenssifuntio $\mathcal{P}$ voi ottaa huomioon myös muiden agenttien toimeinpiteet ja tästä syntyneen järjestelmän tilan tehdessään päätöstä tulevasta tilasta \citep[esimerkiksi][]{Bonabeau2002}.
+Agenttipohjaisesissa malleissa (\textit{agent-based models, ABM}) mallinnetaan yhteisön toimintaa yksittäisten toimijoiden kautta. Kukin toimija, eli agentti, on yksilöllinen toimintaheuristiikka, tai prefrenssifunktio. Tämän preferenssifunktion sekä mahdollisen satunnaisfuntion avulla määritellään agentin tila seuraavalla ajanhetkellä: \begin{equation}\mathcal{T}_{i,(t+1)} = \mathcal{P}( \mathcal{T}_{i,t} ) + \varepsilon \label{abm:yhtälö}\end{equation} Toistamalla sama simulaatio järjestelmän kaikille agenteille, voidaan määrittää järjestelmän tila ajanhetkellä $t+1$ ajanhetken $t$ perusteella. Luonnollisesti preferenssifuntio $\mathcal{P}$ voi ottaa huomioon myös muiden agenttien toimeinpiteet ja tästä syntyneen järjestelmän tilan tehdessään päätöstä tulevasta tilasta \citep[esimerkiksi][]{Bonabeau2002}. \todo{toinen lähde?}
+
+\citet{Bonabeau2002} kuvaa tarkemmin agenttipohjaisen mallien hyötyjä. Hänen mukaansa agenttipohjainen mallinnus havaitsee paremmin nousevia ilmiöitä {\textit{emergent phenomena}), eli ilmiöitä joita ei voida havaita tarkastellessa vain yksilöitä, vaan yksilöiden välinen vuorovaikutus tai toisten yksilöiden toiminta vaikuttaa yksilön käyttäytymiseen. Esimerkkeinä täläisistä tilanteista on oppiminen ja sopeutuminen (ajallinen korrelaatio), aikaisempi kokemus ja tehdyt päätökset (muisti sekä polkuriippuvuus) sekä epälineaarinen käyttäytyminen, esimerkiksi tietyn kynnysarvon jälkeen tapahtuva toiminta.
+
+Toisena hyötynä \citet{Bonabeau2002} mainitsee agenttipohjaisen mallin helpomman tulkittavuuden. Hän arvioi, että yksilökeskeinen kuvaus toiminnasta on selkeämpi kuin erilaiset tilasiirtymäkuvaukset tai prosessikuvaukset. Tämän takia hän arvioi agenttiohjaisen mallien olevan helpommin asiantuntijoiden tulkittavissa ja arvioitavissa, jolloin mallit ovat selkeämmin validoitavissa. Lisäksi \citet{Bonabeau2002} kritisoi keskisuureiden käyttämistä ilmöiden kuvaamiseksi, koska näissä tilanteissa ääriarvot eivät ole nähtävissä ja keskisuureet tasoittavat vaihtelua.
+
+Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  (\textit{microsimulation model}). Sen toiminta ei merkittävästi eroa esitetystä yhtälöstä \ref{abm:yhtälö}, eli malli pyrkii ennustamaan yksilön toimintaa. Kuitenkin taustalla oleva lähestymistapa eroaa. Agenttipohjaisen malli pyrkii luomaan ilmiön ja tämän jälkeen tarkastelemaan luomiseen tarvittuja parametreja, kun taas mikrosimulaatiossa ilmiöön liittyvät tekijät ja riippuvuussuhteet pyritään määrittelemään etukäteen. \todo{refs} Yksilökeskeisen mallinnustavan takia pidän mikrosimulaatioita ja agenttipohjaisia malleja samankaltaisina agenttipohjaisina simulaatioina.
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
-\section{Koneoppiminen (3.5)}
+\citet{VonRandow2011}
+
+\newpage
+
+\section{Koneoppiminen (3)}
 
 \subsection{Laskennan teoria}
 
@@ -91,11 +105,15 @@ Agenttipohjaisessa simulaatiossa mallinnetaan yhteisön toimintaa yksittäisten 
 
 \cite{collingwood12}
 
-\section{Menetelmä $x$ (3.5)}
+\newpage
+
+\section{Menetelmä $x$ (3)}
 
 \subsection{Laskennan teoria}
 
 \subsection{Sovellukset yhteiskuntatieteissä}
+
+\newpage
 
 \section{Keskustelu (5)}
 
