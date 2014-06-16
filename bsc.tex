@@ -75,13 +75,17 @@ Määrittelen tässä työssä laskennallisen yhteiskuntatieteen menetelmiksi, m
 
 On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin Internetin \citep{adamic05,notess02} kuin elinympäristöstä kerättyjen sensoriaineistojen \citep{eagle06,oulasvirta12}, yleistyminen ja käyttöönotoot on helpottanut suurten aineistojen keräämistä. Tällöin perinteiset ei-laskennalliset menetelmät eivät välttämättä sovellu tutkimukseen, ja samaan aikaan laajat aineistot mahdollistavat aiemmin haastavina pidettyjen menetelmien käytön -- esimerkiksi verkosto-analyysin ongelma on ollut aineiston vaikea keräys \citep{a}. Tällöin myös rahoittajien korostama poikkitieteellinen lähestymistapa \citep[60]{tieteentila12} on ensinnäkin mahdollinen resurssien myötä ja toisaalta välttämätön, koska perinteiset lähestymistavat eivät käytä hyödykseen mahdollisuuksia joita laskennallisten tieteiden kehitys on luonut.
 
-\newpage
-
 \section{Agenttipohjainen simulaatio (3)}
 
 Historiaa, johdattelua
 
 \subsection{Katsaus teoriaan}
+
+\begin{figure}
+\includegraphics[height=6cm]{images/agenttimalli.png} 
+\caption{Agenttipohjainen simulaatio}
+\cite{Macal2009} mukaan.
+\end{figure}
 
 Agenttipohjaisesissa malleissa (\textit{agent-based models, ABM}) mallinnetaan yhteisön toimintaa yksittäisten toimijoiden kautta. Kukin toimija, eli agentti, on yksilöllinen toimintaheuristiikka, tai prefrenssifunktio. Tämän preferenssifunktion sekä mahdollisen satunnaisfuntion avulla määritellään agentin tila seuraavalla ajanhetkellä: \begin{equation}\mathcal{T}_{i,(t+1)} = \mathcal{P}( \mathcal{T}_{i,t} ) + \varepsilon \label{abm:yhtälö}\end{equation} Toistamalla sama simulaatio järjestelmän kaikille agenteille, voidaan määrittää järjestelmän tila ajanhetkellä $t+1$ ajanhetken $t$ perusteella. Luonnollisesti preferenssifuntio $\mathcal{P}$ voi ottaa huomioon myös muiden agenttien toimeinpiteet ja tästä syntyneen järjestelmän tilan tehdessään päätöstä tulevasta tilasta \citep[esimerkiksi][]{Bonabeau2002}. \todo{toinen lähde?} Mallinnusprosessia siis joudutaan etukäteen määrittelemään merkittäviä muuttujia, joka \citet{Gilbert1993} mukaan helpottaa teorioiden muodostamista ja testaamista: simuloidussa malleissa kun ei voida ottaa huomioon kaikki yhteiskunnallista ilmiötä kuvaavia muuttujia.
 
@@ -91,15 +95,16 @@ Toisena hyötynä \citet{Bonabeau2002} mainitsee agenttipohjaisen mallin helpomm
 
 Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  (\textit{microsimulation model}). Sen toiminta ei merkittävästi eroa esitetystä yhtälöstä \ref{abm:yhtälö}, eli malli pyrkii ennustamaan yksilön toimintaa. Kuitenkin taustalla oleva lähestymistapa eroaa. Agenttipohjaisen malli pyrkii luomaan ilmiön parametrien avulla ja tämän jälkeen tarkastelemaan luomiseen tarvittuja parametreja, kun taas mikrosimulaatiossa ilmiöön liittyvät taustamuuttujat ja niiden väliset määritellään etukäteen \citep[58--59]{Gilbert2005}. Yksilökeskeisen mallinnustavan takia pidän mikrosimulaatioita ja agenttipohjaisia malleja samankaltaisina agenttipohjaisina simulaatioina, vaikka niiden toiminnan yksityiskohdat eroavatkin toisistaan.
 
-\subsection{Olemassa olevia välineitä}
+\subsection{Kirjastot ja kehitysympäristöt}
 
+Agenttipohjaisen simulaation toteutukseen on olemassa useita erilaisia valmiita kirjastoja sekä alustoja. \cite{Tobias2004} esittää arviointikriteereitä onnistuneille simulaatioympäristöille: ideaalisti kehitysympäristö pystyy automaattisesti luomaan agentteja tiettyjen todennäköisyysmallien perusteella, yksittäiset agentit voivat olla monimutkaisia ja pystyvät viestimään toisilleen. Lisäksi kehitysympäristön arvioinnissa tulisi heidän mukaansa ottaa huomioon kehittäjien tarpeita, esimerkiksi asennuksen yksinkertaisuus, graafisen käyttöliittymän käyttö ja kattava dokumentaatio ovat hyvän kehitysympäristön tunnusmerkkejä. Lisäksi \citet{Tobias2004} ehdottavat avoimen lähdekoodin lisenssejä positiivisena tekijänä, koska niiden käyttö mahdollistaa mallin muutokset.
 
+Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast-ympäristöä. RePast sallii useamman kielen käytön simulaation kehityksessä, mikä on mahdollistanut sopivan ekosysteemin käytön kehityksessä \cite{North2006}.
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
-\citet{VonRandow2011}
+Esimerkkeinä yhteiskuntatieteen sovelluksista mainittakoon \citet{VonRandow2011}
 
-\newpage
 
 \section{Koneoppiminen (3)}
 
@@ -183,6 +188,6 @@ Lisäksi työssä on esitelty kolmea laskennallista menetelmää tarkemmin ...
 
 \newpage
 \bibliographystyle{abbrvnat}
-\bibliography{bsc,/Users/mnelimar/.research/library.bib}  
+\bibliography{bsc,/Users/mnelimar/Dropbox/_tools/library.bib}  
 
 \end{document}
