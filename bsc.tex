@@ -13,6 +13,9 @@
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 
+\usepackage{listings}
+
+
 \usepackage{caption}
 \usepackage{subcaption}
 
@@ -99,14 +102,19 @@ Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  
 
 Agenttipohjaisen simulaation toteutukseen on olemassa useita erilaisia valmiita kirjastoja sekä alustoja. \cite{Tobias2004} esittää arviointikriteereitä onnistuneille simulaatioympäristöille: ideaalisti kehitysympäristö pystyy automaattisesti luomaan agentteja tiettyjen todennäköisyysmallien perusteella, yksittäiset agentit voivat olla monimutkaisia ja pystyvät viestimään toisilleen. Lisäksi kehitysympäristön arvioinnissa tulisi heidän mukaansa ottaa huomioon kehittäjien tarpeita, esimerkiksi asennuksen yksinkertaisuus, graafisen käyttöliittymän käyttö ja kattava dokumentaatio ovat hyvän kehitysympäristön tunnusmerkkejä. Lisäksi \citet{Tobias2004} ehdottavat avoimen lähdekoodin lisenssejä positiivisena tekijänä, koska niiden käyttö mahdollistaa mallin muutokset.
 
-Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast-ympäristöä. RePast sallii useamman kielen käytön simulaation kehityksessä, mikä on mahdollistanut sopivan ekosysteemin käytön kehityksessä \cite{North2006}.
+Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast-ympäristöä. RePast sallii useamman kielen käytön simulaation kehityksessä, mikä on mahdollistanut erilaisten välineiden ja kirjastojen käytön kehityksessä \cite{North2006}, kuten esimerkiksi Javan käytön. Esimerkki Java-pohjaisesta RePast-mallista on liitteessä \ref{appedix:repast}, RePast-ympäristön hyödyn havaitsee valmiista koodista, jotka liittyvät simulaation pohjaan, siinä tehtävään etsintään ja liikkumiseen sekä todennäköisyysjakaumien käsittelyyn. Lisäksi merkitsemällä (\textit{annotate}), voidaan erikseen merkitä kuinka usein kyseinen agentti suorittaa oman preferenssifunktionsa.
+
+\todo{Toinen framework?}
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
-Esimerkkeinä yhteiskuntatieteen sovelluksista mainittakoon \citet{VonRandow2011}
+Yhteiskuntatieteissä simulaatiopohjaista mallinnusta on sovellettu tarkastellessa yhteisöjen toimintaa ja niiden rakentumista \citep[esimerkiksi][]{Epstein2002a,Epstein2001,Cederman2003,Granovetter1978,Axelrod1986,Villatoro2013} kuin organisaation toimintaa \citep[esimerkiksi][]{VonRandow2011}. Perustana on ajatus, että yksittäisten toimijoiden päätökset vaikuttavat kokonaisuutena yhteiskunnan rakenteisiin -- erityisesti tarkastelemalla joukon heterogeenisyyttä sekä sosiaalisen vuorovaikutuksen merkitystä \citep{Squazzoni2013}.
+
+\todo{Tarkempi esittely per työ}
 
 
-\section{Koneoppiminen (3)}
+
+\section{Klusterointi ja koneoppiminen}
 
 Johdattelu, määrällinen tutkimus yhteiskuntatieteissä
 
@@ -137,6 +145,12 @@ Johdattelu, laadullinen tutkimus yhteiskuntatieteissä
 \section{Keskustelu (5)}
 
 \subsection{Validiteetti ja reliabiliteetti haasteena}
+
+%% Villatoro2013
+
+%% Edmonds, B., & Hales, D. (2005). Computational simulation as theoretical experiment. Journal of Mathemat- ical Sociology, 29, 209–232
+
+%% A collaborative approach to bridging the research-policy gap through the development of policy advice software. Milne, B et al. Evidence and Policy. (2013) http://dx.doi.org/10.1332/174426413X672210
 
 \subsection{Työskentely monitieteellisesti}
 
@@ -188,6 +202,19 @@ Lisäksi työssä on esitelty kolmea laskennallista menetelmää tarkemmin ...
 
 \newpage
 \bibliographystyle{abbrvnat}
-\bibliography{bsc,/Users/mnelimar/Dropbox/_tools/library.bib}  
+\bibliography{bsc,/Users/mnelimar/Dropbox/_tools/library.bib} 
+
+\newpage
+
+\appendix
+
+\section{RePast-esimerkki}
+\label{appedix:repast}
+
+\lstinputlisting[language=Java,breaklines=true,numbers=left,tabsize=1]{examples/RePast.java} 
+
+RePast-dokumentaation pohjalta luotu esimerkki.
+
+%% http://repast.sourceforge.net/docs/RepastJavaGettingStarted.pdf
 
 \end{document}
