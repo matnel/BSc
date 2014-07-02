@@ -78,7 +78,7 @@ Määrittelen tässä työssä laskennallisen yhteiskuntatieteen menetelmiksi, m
 
 On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin Internetin \citep{adamic05,notess02} kuin elinympäristöstä kerättyjen sensoriaineistojen \citep{eagle06,oulasvirta12}, yleistyminen ja käyttöönotoot on helpottanut suurten aineistojen keräämistä. Tällöin perinteiset ei-laskennalliset menetelmät eivät välttämättä sovellu tutkimukseen, ja samaan aikaan laajat aineistot mahdollistavat aiemmin haastavina pidettyjen menetelmien käytön -- esimerkiksi verkosto-analyysin ongelma on ollut aineiston vaikea keräys \citep{a}. Tällöin myös rahoittajien korostama poikkitieteellinen lähestymistapa \citep[60]{tieteentila12} on ensinnäkin mahdollinen resurssien myötä ja toisaalta välttämätön, koska perinteiset lähestymistavat eivät käytä hyödykseen mahdollisuuksia joita laskennallisten tieteiden kehitys on luonut.
 
-\section{Agenttipohjainen simulaatio (3)}
+\section{Simulointi agenttipohjaisilla malleilla}
 
 Historiaa, johdattelua
 
@@ -119,11 +119,17 @@ Yhteiskuntatieteellisten teorioiden lisäksi agenttipohjaisen simulaation sovell
 %% Yllä käsiteltiin sosiaalisen prosessin tutkimusta, eräs varhainen -- ei laskennallinen vaan behavioralistiseen koulukuntaan -- kuuluva tutkimus on  \citet{Granovetter1978} yhteisön toimintaa ja sen käynnistymistä käsittelevä tutkimus.
 
 
-\section{Klusterointi ja koneoppiminen}
+\section{Luokittelu ohjaamattomalla koneoppimisella}
 
 Johdattelu, määrällinen tutkimus yhteiskuntatieteissä
 
-\subsection{Laskennan teoria}
+\subsection{Menetelmät}
+
+Ohjaamatonta koneoppimista voi lähestyä useilla erilaisilla menetelmillä, kuten assosiaatiosäännöillä, dimensioiden vähentämisellä (\textit{dimensionality reduction}) sekä  klusteroimalla \citet[485--586]{Hastie2009}\footnote{\citet[43--138]{Hastie2009} nostavat myös regressiomallit koneoppimisen osana, mutta kuten johdannossa argumentoin kyseessä on yhteiskuntatieteen näkökulmasta enemmänkin perinteinen laskennallinen menetelmä, enkä siksi esittele tarkemmin näiden yksinkertaisten mallien käyttöä osana laskennallista yhteiskuntatiedettä.}. \todo{Lisää johdattelua?}
+
+Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, että ne selittävät mahdollisimman suuren osan aineistossa havaituista eroista. Kustakin säännöstä lasketaan erikseen sen selitysaste, mutta myös luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä. Eräs algoritmi sääntöjen havaitsemiseksi on Apriori-algoritmi. %% (Agrawal et al., 1995) 
+
+
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
