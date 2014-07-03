@@ -47,7 +47,7 @@ Yksittäisten tutkimusten tarkastelun kautta voidaan nostaa esille suurempia tee
 
 \mytableofcontents
 
-\section{Johdanto (3)}
+\section{Johdanto}
 
 Työssä esitetään laskennallisia menetelmiä joita sovelletaan yhteiskuntaa koskeviin kysymyksiin vastaamiseksi: laskennallisen yhteiskuntatieteen malleihin, sovelluksiin sekä tieteenfilosofiaan. Työssä yhteiskuntatiede nähdään laajasti yhteiskuntaa tutkivien tieteiden joukkona, joihin kuuluvat esimerkiksi politiikan tutkimus, taloustiede, sosiologia, sosiaalipyskologia ja viestinnän tutkimus\footnote{Tässä työssä esimerkit on erityisesti valittu politiikan tukimuksen näkökulmasta, mutta esitetyt menetelmät ovat laajemmin sovellettavissa laajemminkin yhteiskuntatieteisiin.}. Tutkimusaloille tyypillistä on samankaltaisten tutkimuskysymysten lähestyminen kunkin alan oman oppihistorian sekä käsitteistön kautta \citep{a}. Esimerkiksi poliitikkojen sosiaalisen median käyttöä voidaan lähestyä niin politiikan tutkimuksen, viestinnän tutkimuksen kuin esimerkiksi sosiologian näkökulmasta. Esimerkki.
 
@@ -127,9 +127,13 @@ Johdattelu, määrällinen tutkimus yhteiskuntatieteissä
 
 Ohjaamatonta koneoppimista voi lähestyä useilla erilaisilla menetelmillä, kuten assosiaatiosäännöillä, dimensioiden vähentämisellä (\textit{dimensionality reduction}) sekä  klusteroimalla \citet[485--586]{Hastie2009}\footnote{\citet[43--138]{Hastie2009} nostavat myös regressiomallit koneoppimisen osana, mutta kuten johdannossa argumentoin kyseessä on yhteiskuntatieteen näkökulmasta enemmänkin perinteinen laskennallinen menetelmä, enkä siksi esittele tarkemmin näiden yksinkertaisten mallien käyttöä osana laskennallista yhteiskuntatiedettä.}. \todo{Lisää johdattelua?}
 
-Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, että ne selittävät mahdollisimman suuren osan aineistossa havaituista eroista. Kustakin säännöstä lasketaan erikseen sen selitysaste, mutta myös luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä. Eräs algoritmi sääntöjen havaitsemiseksi on Apriori-algoritmi. %% (Agrawal et al., 1995) 
+Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, että ne selittävät mahdollisimman suuren osan aineistossa havaituista eroista. Kustakin säännöstä lasketaan erikseen sen selitysaste, mutta myös luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä \citep[485--586]{Hastie2009}. Eräs algoritmi sääntöjen muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Apriori laskee eri sääntökombinaatioiden frekvenssin aineistosta, ja tällä perusteella määrittelee mitkä säännöt ovat tarpeeksi yleisiä yleistämiseksi. \todo{pseudoalgoritmin esittely? pitäisi linkata jotenkin laskennan tulos luottamukseen ja lifteihin}
 
+Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien muuttujien määrää vähennetään etsimällä muuttujaryhmiä, joiden kautta aineiston vaihtelua selitetään mahdollisimman hyvin. Yhteiskuntatietelijöiden yleisesti tuntema menetelmä tähän on pääkomponenttianalyysi (\textit{principal component analysysi, PCA}), jonka kautta aineisto jaetaan selittäviin faktoreihin. \todo{Lisää PCAsta?} Laskennalliset menetelmät mahdollistavat myös aineiston samankaltaisten alkioiden esittämisen ryhminä, eli klusteroinnin. Menetelmiä klusterointiin on useita, esimerkiksi $k-means$ sekä spektri-klusterointi\todo{Spectral Clustering} \citep[485--586]{Hastie2009}.
 
+k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spectral clusterin perustuu samankaltaisten ominaisarvojen klusterointiin samaan ryhmään, jolloin klusterit korostavat\todo{ominaisarvoista selostus}
+
+\subsection{Kirjastot ja kehitysympäristöt}
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
@@ -137,13 +141,12 @@ Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, e
 
 \citet{Leskovec2010}
 
-\todo{Teorian puute? Tarkastelu perinteisellä menetelmällä?}
-
 \cite{collingwood12}
 
-\newpage
 
-\section{Laskennallinen laadullinen tutkimus (3)}
+%% Kaufman and Rousseeuw (1990)
+
+\section{Laskennallinen laadullinen tutkimus}
 
 Johdattelu, laadullinen tutkimus yhteiskuntatieteissä
 
@@ -151,11 +154,11 @@ Johdattelu, laadullinen tutkimus yhteiskuntatieteissä
 
 \subsection{Sovellukset yhteiskuntatieteissä}
 
-\newpage
-
-\section{Keskustelu (5)}
+\section{Keskustelu}
 
 \subsection{Validiteetti ja reliabiliteetti haasteena}
+
+\todo{Teorian puute? Tarkastelu perinteisellä menetelmällä?}
 
 %% Villatoro2013
 
