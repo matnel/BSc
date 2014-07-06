@@ -129,9 +129,9 @@ Ohjaamatonta koneoppimista voi lähestyä useilla erilaisilla menetelmillä, kut
 
 Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, että ne selittävät mahdollisimman suuren osan aineistossa havaituista eroista. Kustakin säännöstä lasketaan erikseen sen selitysaste, mutta myös luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä \citep[485--586]{Hastie2009}. Eräs algoritmi sääntöjen muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Apriori laskee eri sääntökombinaatioiden frekvenssin aineistosta, ja tällä perusteella määrittelee mitkä säännöt ovat tarpeeksi yleisiä yleistämiseksi. \todo{pseudoalgoritmin esittely? pitäisi linkata jotenkin laskennan tulos luottamukseen ja lifteihin}
 
-Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien muuttujien määrää vähennetään etsimällä muuttujaryhmiä, joiden kautta aineiston vaihtelua selitetään mahdollisimman hyvin. Yhteiskuntatietelijöiden yleisesti tuntema menetelmä tähän on pääkomponenttianalyysi (\textit{principal component analysysi, PCA}), jonka kautta aineisto jaetaan selittäviin faktoreihin. \todo{Lisää PCAsta?} Laskennalliset menetelmät mahdollistavat myös aineiston samankaltaisten alkioiden esittämisen ryhminä, eli klusteroinnin. Menetelmiä klusterointiin on useita, esimerkiksi $k-means$ sekä spektri-klusterointi\todo{Spectral Clustering} \citep[485--586]{Hastie2009}.
+Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien muuttujien määrää vähennetään etsimällä muuttujaryhmiä, joiden kautta aineiston vaihtelua selitetään mahdollisimman hyvin. Yhteiskuntatietelijöiden yleisesti tuntema menetelmä tähän on pääkomponenttianalyysi (\textit{principal component analysysi, PCA}), jonka kautta aineisto jaetaan selittäviin faktoreihin. \todo{Lisää PCAsta?} Laskennalliset menetelmät mahdollistavat myös aineiston samankaltaisten alkioiden esittämisen ryhminä, eli klusteroinnin. Menetelmiä klusterointiin on useita, esimerkiksi $k-means$ sekä spektriklusterointi\todo{Spectral Clustering} \citep[485--586]{Hastie2009}.
 
-k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spectral clusterin perustuu samankaltaisten ominaisarvojen klusterointiin samaan ryhmään, jolloin klusterit korostavat\todo{ominaisarvoista selostus}
+k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoistava klusterointi.
 
 \subsection{Kirjastot ja kehitysympäristöt}
 
@@ -139,7 +139,7 @@ k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekk
 
 \citet{Jurek2013} soveltavat koneoppimista 271 valtion demokratian tilan tarkastelussa. He nostavat esille, että koneoppimisen soveltaminen mahdollistaa selittävien tekijöiden muutoksien valitsemisen vapaammin kuin perinteisten tilastollisten mentelmien soveltaminen. Heidän mallinsa löysi yhteensä 210 sääntöä, jotka vaikuttavat demokratian tilaan.
 
-\citet{Leskovec2010}
+%% \citet{Leskovec2010} regressio-classifier
 
 \cite{collingwood12}
 
