@@ -131,7 +131,15 @@ Tilastollisten testien tukena &  7 \\
 
 \section{Simulointi agenttipohjaisilla malleilla}
 
-Historiaa, johdattelua
+Yhteiskuntatieteissä simulaatiopohjaista mallinnusta on sovellettu tarkastellessa yhteisöjen toimintaa ja niiden rakentumista \citep[esimerkiksi][]{Epstein2002a,Epstein2001,Cederman2003,Villatoro2013} kuin organisaation toimintaa \citep[esimerkiksi][]{VonRandow2011,Pearson2011}. Perustana on ajatus, että yksittäisten toimijoiden päätökset vaikuttavat kokonaisuutena yhteiskunnan rakenteisiin -- erityisesti tarkastelemalla joukon heterogeenisyyttä sekä sosiaalisen vuorovaikutuksen merkitystä \citep{Squazzoni2013}.
+
+\citet{Epstein2002a} mallintaa kansalaistottelemattomuuden muutosta poliisien ja aktivistien suhteen. Aktivistit reagoivat legimiteetin ja kokemansa vaikeuden (\textit{hardship}) muutokseen: vähäisempi legitimiteetti ja suurempi koettu vaikeus johtavat radikalisoitumiseen. Lisäksi mallissa muutetaan agenttien liikkumista, poliisien määrää ja poliisien vangitsemien aktivistien vankilassa pitämää aikaa. Eri arvojen pohjalta suoritetaan kahdeksan ajoa, joiden pohjalta tarkastellaan yhteiskunnan tilaa. Erilaisten ajojen määrä tässä julkaisussa on siis varsin vähäinen, mikä osittain kyseenalaistaa havaittuja tuloksia -- jotka kuitenkin perustuvat sattumaan\footnote{Esimerkiksi \citet{Dragicevic2014} esittelevät, kuinka tilastollisesti merkittävät erot voivat aiheutua pienistä muutoksista simulaatiossa.}. Lisäksi mallin pohjalta tarkastellaan esimerkiksi legitimiteetin ja poliisien määrän muutosten vaikutusta yhteiskuntaan.
+
+Edelleen \citet{Epstein2001} arvio sosiaalisten normien kehittymistä määrittelemällä kullekkin agentille ensisijaisen normin sekä tarkkailuetäisyys, jonka perusteella agentti mukauttaa omaa normiaan muiden normeihin. Kyseessä siis on sosiaalisoitumisprosessin simulointi laskennallisesti. Jälleen mallien parametreja muutetaan, jotta voidaan havaita erilaisia yhteiskunnallisia tilanteita ja sääntöjen vaikutusta lopputuloksiin; kutakin parametria kuitenkin simuloidaan vain kerran. Myös \cite{Villatoro2013} paneutuvat normien toimintaan simuloinnissan, tarkkailen rankaisun merkitystä normien syntymisessä ja ylläpitämisessä. Työn voi myös tulkita edustavan modernimpaa simulaatiotutkimusta: simulaatiota on toistettu 5000 kertaa tulosten vahvistamiseksi, ja simulaatioaineiston saatavuus on erikseen mainittu artikkelissa.
+
+Yhteiskuntatieteellisten teorioiden lisäksi agenttipohjaisen simulaation sovelluskohteena on ollut erityisesti julkisten organisaatioiden toiminta ja sen kehittäminen. Esimerkiksi \citet{Pearson2011,VonRandow2011} arvioivat vanhustenhoidon tulevia tarpeita simulaatiomallin pohjalta. Kyseessä on mikrosimulaatiomalli, jolloin mallin taustaoletukset perustuvat saatavissa oleviin tietoihin, toisin kuin agenttipohjaisissa malleissa -- missä parametrien arvojen valinta on ollut mielivaltaista.
+
+%% Yllä käsiteltiin sosiaalisen prosessin tutkimusta, eräs varhainen -- ei laskennallinen vaan behavioralistiseen koulukuntaan -- kuuluva tutkimus on  \citet{Granovetter1978} yhteisön toimintaa ja sen käynnistymistä käsittelevä tutkimus.
 
 \subsection{Katsaus teoriaan}
 
@@ -157,22 +165,17 @@ Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast
 
 \todo{Toinen framework?}
 
-\subsection{Sovellukset yhteiskuntatieteissä}
-
-Yhteiskuntatieteissä simulaatiopohjaista mallinnusta on sovellettu tarkastellessa yhteisöjen toimintaa ja niiden rakentumista \citep[esimerkiksi][]{Epstein2002a,Epstein2001,Cederman2003,Villatoro2013} kuin organisaation toimintaa \citep[esimerkiksi][]{VonRandow2011,Pearson2011}. Perustana on ajatus, että yksittäisten toimijoiden päätökset vaikuttavat kokonaisuutena yhteiskunnan rakenteisiin -- erityisesti tarkastelemalla joukon heterogeenisyyttä sekä sosiaalisen vuorovaikutuksen merkitystä \citep{Squazzoni2013}.
-
-\citet{Epstein2002a} mallintaa kansalaistottelemattomuuden muutosta poliisien ja aktivistien suhteen. Aktivistit reagoivat legimiteetin ja kokemansa vaikeuden (\textit{hardship}) muutokseen: vähäisempi legitimiteetti ja suurempi koettu vaikeus johtavat radikalisoitumiseen. Lisäksi mallissa muutetaan agenttien liikkumista, poliisien määrää ja poliisien vangitsemien aktivistien vankilassa pitämää aikaa. Eri arvojen pohjalta suoritetaan kahdeksan ajoa, joiden pohjalta tarkastellaan yhteiskunnan tilaa. Erilaisten ajojen määrä tässä julkaisussa on siis varsin vähäinen, mikä osittain kyseenalaistaa havaittuja tuloksia -- jotka kuitenkin perustuvat sattumaan\footnote{Esimerkiksi \citet{Dragicevic2014} esittelevät, kuinka tilastollisesti merkittävät erot voivat aiheutua pienistä muutoksista simulaatiossa.}. Lisäksi mallin pohjalta tarkastellaan esimerkiksi legitimiteetin ja poliisien määrän muutosten vaikutusta yhteiskuntaan.
-
-Edelleen \citet{Epstein2001} arvio sosiaalisten normien kehittymistä määrittelemällä kullekkin agentille ensisijaisen normin sekä tarkkailuetäisyys, jonka perusteella agentti mukauttaa omaa normiaan muiden normeihin. Kyseessä siis on sosiaalisoitumisprosessin simulointi laskennallisesti. Jälleen mallien parametreja muutetaan, jotta voidaan havaita erilaisia yhteiskunnallisia tilanteita ja sääntöjen vaikutusta lopputuloksiin; kutakin parametria kuitenkin simuloidaan vain kerran. Myös \cite{Villatoro2013} paneutuvat normien toimintaan simuloinnissan, tarkkailen rankaisun merkitystä normien syntymisessä ja ylläpitämisessä. Työn voi myös tulkita edustavan modernimpaa simulaatiotutkimusta: simulaatiota on toistettu 5000 kertaa tulosten vahvistamiseksi, ja simulaatioaineiston saatavuus on erikseen mainittu artikkelissa.
-
-Yhteiskuntatieteellisten teorioiden lisäksi agenttipohjaisen simulaation sovelluskohteena on ollut erityisesti julkisten organisaatioiden toiminta ja sen kehittäminen. Esimerkiksi \citet{Pearson2011,VonRandow2011} arvioivat vanhustenhoidon tulevia tarpeita simulaatiomallin pohjalta. Kyseessä on mikrosimulaatiomalli, jolloin mallin taustaoletukset perustuvat saatavissa oleviin tietoihin, toisin kuin agenttipohjaisissa malleissa -- missä parametrien arvojen valinta on ollut mielivaltaista.
-
-%% Yllä käsiteltiin sosiaalisen prosessin tutkimusta, eräs varhainen -- ei laskennallinen vaan behavioralistiseen koulukuntaan -- kuuluva tutkimus on  \citet{Granovetter1978} yhteisön toimintaa ja sen käynnistymistä käsittelevä tutkimus.
-
 
 \section{Luokittelu ohjaamattomalla koneoppimisella}
 
-Johdattelu, määrällinen tutkimus yhteiskuntatieteissä
+\citet{Jurek2013} soveltavat koneoppimista 271 valtion demokratian tilan tarkastelussa. He nostavat esille, että koneoppimisen soveltaminen mahdollistaa selittävien tekijöiden muutoksien valitsemisen vapaammin kuin perinteisten tilastollisten mentelmien soveltaminen. Heidän mallinsa löysi yhteensä 210 sääntöä, jotka vaikuttavat demokratian tilaan.
+
+%% \citet{Leskovec2010} regressio-classifier
+
+\cite{collingwood12}
+
+
+%% Kaufman and Rousseeuw (1990)
 
 \subsection{Menetelmät}
 
@@ -185,17 +188,6 @@ Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien m
 k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoon perustuva k-means klusterointi.
 
 \subsection{Kirjastot ja kehitysympäristöt}
-
-\subsection{Sovellukset yhteiskuntatieteissä}
-
-\citet{Jurek2013} soveltavat koneoppimista 271 valtion demokratian tilan tarkastelussa. He nostavat esille, että koneoppimisen soveltaminen mahdollistaa selittävien tekijöiden muutoksien valitsemisen vapaammin kuin perinteisten tilastollisten mentelmien soveltaminen. Heidän mallinsa löysi yhteensä 210 sääntöä, jotka vaikuttavat demokratian tilaan.
-
-%% \citet{Leskovec2010} regressio-classifier
-
-\cite{collingwood12}
-
-
-%% Kaufman and Rousseeuw (1990)
 
 \section{Laskennallinen laadullinen tutkimus}
 
