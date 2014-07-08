@@ -83,12 +83,51 @@ Määrällisestä lähestymistapaa edustavat tilastollisten menetelmien soveltam
 
 Kuten havaitaan, tutkimusalan määritelmät eivät ole kaikilla tutkijoilla samankaltaisia, johtuen myös erilaista lähestymistavoista laskennallisen yhteiskuntatieteen määritelmään. Kuten \citet{cioffi-revilla10} huomauttaa, laskennallisen tieteen osalta voidaan erottaa laskennallisuus menetelmänä ja laskenta teoreettisena lähtökohtana. Jaottelu ei kuitenkään ole ongelmaton: esimerkiksi nykyisin tilastollisten menetelmien kohdalla käytetään poikkeuksetta laskennallista välineistöä. Toisaalta, sosiaalisen verkostojen analyysin kohdalla taustalla on graafiteoria ja sen sovellukset, vaikkakin niitä suoritetaan laskennallisesti. Tässä työssä on syytä esittää tarkempi rajaus laskennallisen yhteiskuntatieteen toimintakentästä, koska rajaus vaikuttaa käsiteltäviin aiheisiin.
 
-%% TODO color box
-\label{css-maar}
+\subsection{Kirjallisuuskatsaus}
 
-Määrittelen tässä työssä laskennallisen yhteiskuntatieteen menetelmiksi, millä voidaan annettujen oletusten perusteella rakentaa ennustuskykyisiä malleja yhteiskuntatieteellisten kysymysten ratkaisemiseksi. ELABOROI. Tämän rajauksen seurauksena olen nostanut esille kolme erilaista laskennallista menetelmää: agenttipohjaisen simulaation, koneoppimisen sekä .
+Havaitaksemme kuinka erilaisia laskennallisten menetelmien käytetään yhteiskuntatieteissä suoritan kirjallisuuskatsauksen laskennallisten mentelmien käytöstä politiikan tutkimuksessa. Etsin kirjallisuuskatsauksessa termejä ``computational social science``, ``machine learning``, `ìnformation extraction``, ``simulation` sekä ``data-mining` artikkeleista käyttäen kunkin lehden omaa hakukonetta, lehdet olivat American Journal of Political Science  (AJPS) sekä European Journal of Political Research (EJPR). %% Political Studies (PS) sekä Political and Society (P\&S).
+Lisäksi tarkastellaan Social Science Computer Review:tä (SSCR) merkittävänä laskennallisten yhteiskuntatieteiden lehtenä, vaikkei kyseessä ole erityisesti politiikan tutkimuksen lehti, näihin hakuihin liitettiin täsmentävä termi ``politics``, jolloin kirjallisuuskataus rajataan politiikan tutkimukseen.
 
-On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin
+Löydettyjen artikkelien määrät on esitetty taulukossa \ref{kirjallisuuskataus}, tarkempaan tarkasteluun valittiin kustakin lehdestä kullakin hakusanalla 20 artikkelia, jotka hakukoneen perusteella vastasivat parhaiten hakutermejä, kustakin artikkelista tarkastettiin tarkemmin metodologia-osuudesta käytettyjä menetelmiä tarkemmin. Artikkelit jaettiin käytettyjen menetelmien osalta agenttipohjaisiin simulointeihin, topic modelleihin ja muihin menetelmiin aineiston luokitteluksi sekä piilotettuihin Markovin ketjuihin (\textit{hidden Markov chain}). Lisäksi osassa artikkeleita ei käytetty laskennallisia menetelmiä tai laskennallisia menetelmiä käytettiin tilastollisten menetelmien testaukseen sekä tarkastamiseen, kuten Monte Carlo-simulaatiot tai bootstrap-tyyliset testit.
+
+\begin{table}
+
+\begin{tabular}{lrrrrr}
+~  & Computational Social Science & Machine learning & Information extraction & Simulation & Data-Mining \\
+\hline
+AJPS  & 53  & 38  & 0  & 162 & 68  \\
+EJPR  & 17  & 47  & 0  & 87  & 147 \\
+%% PS    & 15  & 243 & 41 & 86  & 172 \\
+%% P\&S  & 4   & 63  & 0  & 12  & 76  \\
+SSCR & 149 & 228 & 31 & 326 & 36  \\
+\hline
+\end{tabular}
+\caption{Hakuosumat kirjallisuudesta}
+\label{kirjallisuuskataus}
+
+\end{table}
+
+
+\begin{table}
+
+\begin{tabular}{lc}
+~  & Computational Social Science \\
+\hline
+Agenttipohjainen simulijnti & 2 \\
+Topic model ja muu tekstin luokittelu & 3 \\
+Hidden Markov Models & 1 \\
+\hline
+Ei selkeää laskennallista menetelmää & 7 \\
+Tilastollisten testien tukena &  7 \\
+\hline
+\end{tabular}
+\caption{Tarkempi menetelmällinen valikoima}
+\label{kirjallisuuskataus2}
+
+\end{table}
+
+
+%% On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin
 
 \section{Simulointi agenttipohjaisilla malleilla}
 
@@ -143,7 +182,7 @@ Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, e
 
 Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien muuttujien määrää vähennetään etsimällä muuttujaryhmiä, joiden kautta aineiston vaihtelua selitetään mahdollisimman hyvin. Yhteiskuntatietelijöiden yleisesti tuntema menetelmä tähän on pääkomponenttianalyysi (\textit{principal component analysysi, PCA}), jonka kautta aineisto jaetaan selittäviin faktoreihin. \todo{Lisää PCAsta?} Laskennalliset menetelmät mahdollistavat myös aineiston samankaltaisten alkioiden esittämisen ryhminä, eli klusteroinnin. Menetelmiä klusterointiin on useita, esimerkiksi $k-means$ sekä spektriklusterointi\todo{Spectral Clustering} \citep[485--586]{Hastie2009}.
 
-k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoistava klusterointi.
+k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoon perustuva k-means klusterointi.
 
 \subsection{Kirjastot ja kehitysympäristöt}
 
