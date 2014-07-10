@@ -103,7 +103,7 @@ EJPR  & 0 & 0 & 0 &  2 & 0 \\
 \hline
 %% PS    & 15  & 243 & 41 & 86  & 172 \\
 %% P\&S  & 4   & 63  & 0  & 12  & 76  \\
-SSCR & 149 & 228 & 31 & 326 & 36  \\
+SSCR & 12 & 3 & 0 & 46 & 4  \\
 \hline
 \end{tabular}
 \caption{Hakuosumat kirjallisuudesta} \\
@@ -112,7 +112,7 @@ CSS = Computational Social Science, ML = Machine Learning, IE = Information Extr
 
 \end{table}
 
-Koska käytössä olleet menetelmät olivat varsin vähäiset suhteessa yllä esitettyihin, varsin laajoihin kuvauksiin laskennallisesta yhteiskuntatieteestä, on syytä tarkastella muitakin julkaisuja, erityisesti Social Science Computer Review:tä (SSCR) tietojenkäsittelytieteen ja yhteiskuntatieteen yhteisenä lehtenä. Vikkei kyseessä ole erityisesti politiikan tutkimuksen lehti, lehden menetelmät ovat melko varmasti soveltuvissa myös politiikan tutkimukseen.
+Koska käytössä olleet menetelmät olivat varsin vähäiset suhteessa yllä esitettyihin, varsin laajoihin kuvauksiin laskennallisesta yhteiskuntatieteestä, on syytä tarkastella muitakin julkaisuja, erityisesti Social Science Computer Review:tä (SSCR) tietojenkäsittelytieteen ja yhteiskuntatieteen yhteisenä lehtenä. Vaikkei kyseessä ole erityisesti politiikan tutkimuksen lehti, lehden menetelmät ovat sovellettavissa myös politiikan tutkimukseen. Edelleen simulaatiomallien määrä suhteissa muihin menetelmiin on suurehko, mutta erityisalan lehdessä on edustettuina myös muita laskennallisen yhteiskuntatieteen töitä. Jälleen simulaatioiden käyttö on yleisin käytössä oleva menetelmä, tiedon louhinna teemana alla nostetaan esille erilaisia menetelmiä tekstiaineistojen analysoimiseksi
 
 %% On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin
 
@@ -129,6 +129,8 @@ Yhteiskuntatieteellisten teorioiden lisäksi agenttipohjaisen simulaation sovell
 
 %% Yllä käsiteltiin sosiaalisen prosessin tutkimusta, eräs varhainen -- ei laskennallinen vaan behavioralistiseen koulukuntaan -- kuuluva tutkimus on  \citet{Granovetter1978} yhteisön toimintaa ja sen käynnistymistä käsittelevä tutkimus.
 
+%% A comparison of agent-based models of income tax evasion
+
 \subsection{Agenttipohjainen simulointi}
 
 \begin{figure}
@@ -142,6 +144,8 @@ Agenttipohjaisesissa malleissa (\textit{agent-based models, ABM}) mallinnetaan y
 \citet{Bonabeau2002} kuvaa tarkemmin agenttipohjaisen mallien hyötyjä. Hänen mukaansa agenttipohjainen mallinnus havaitsee paremmin nousevia ilmiöitä {\textit{emergent phenomena}), eli ilmiöitä joita ei voida havaita tarkastellessa vain yksilöitä, vaan yksilöiden välinen vuorovaikutus tai toisten yksilöiden toiminta vaikuttaa yksilön käyttäytymiseen. Esimerkkeinä täläisistä tilanteista on oppiminen ja sopeutuminen (ajallinen korrelaatio), aikaisempi kokemus ja tehdyt päätökset (muisti sekä polkuriippuvuus) sekä epälineaarinen käyttäytyminen, esimerkiksi tietyn kynnysarvon jälkeen tapahtuva toiminta.
 
 Toisena hyötynä \citet{Bonabeau2002} mainitsee agenttipohjaisen mallin helpomman tulkittavuuden. Hän arvioi, että yksilökeskeinen kuvaus toiminnasta on selkeämpi kuin erilaiset tilasiirtymäkuvaukset tai prosessikuvaukset. Tämän takia hän arvioi agenttiohjaisen mallien olevan helpommin asiantuntijoiden tulkittavissa ja arvioitavissa, jolloin mallit ovat selkeämmin validoitavissa. Lisäksi \citet{Bonabeau2002} kritisoi keskisuureiden käyttämistä ilmöiden kuvaamiseksi, koska näissä tilanteissa ääriarvot eivät ole nähtävissä ja keskisuureet tasoittavat vaihtelua.
+
+\subsection{Mikrosimulaatiot}
 
 Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  (\textit{microsimulation model}). Sen toiminta ei merkittävästi eroa esitetystä yhtälöstä \ref{abm:yhtälö}, eli malli pyrkii ennustamaan yksilön toimintaa. Kuitenkin taustalla oleva lähestymistapa eroaa. Agenttipohjaisen malli pyrkii luomaan ilmiön parametrien avulla ja tämän jälkeen tarkastelemaan luomiseen tarvittuja parametreja, kun taas mikrosimulaatiossa ilmiöön liittyvät taustamuuttujat ja niiden väliset määritellään etukäteen \citep[58--59]{Gilbert2005}. Yksilökeskeisen mallinnustavan takia pidän mikrosimulaatioita ja agenttipohjaisia malleja samankaltaisina agenttipohjaisina simulaatioina, vaikka niiden toiminnan yksityiskohdat eroavatkin toisistaan.
 
@@ -162,6 +166,7 @@ Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast
 
 \cite{collingwood12}
 
+%% Marketing Segmentation Through Machine Learning Models An Approach Based on Customer Relationship Management and Customer Profitability Accounting
 
 %% Kaufman and Rousseeuw (1990)
 
@@ -180,13 +185,20 @@ Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien m
 
 k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoon perustuva k-means klusterointi.
 
-\section{Laskennallinen laadullinen tutkimus}
+\section{Tekstin analysointi}
 
-Johdattelu, laadullinen tutkimus yhteiskuntatieteissä
+Yllä olevissa laskennallisissa menetelmissä on käytetty määrällistä aineistoa, mutta laskennallisia menetelmiä käytetään myös laadullisen aineiston -- erityisesti tekstin -- tarkastelussa.
 
-\subsection{Laskennan teoria}
+%% Public Sentiment and Critical Framing in Social Media Content During the 2012 US Presidential Campaign
 
-\subsection{Sovellukset yhteiskuntatieteissä}
+%% Visualizing Situational Data: Applying Information Fusion for Detecting Social-Ecological Events
+
+%% Data mining - New challenges for statisticians
+
+
+\subsection{Sentimenttianalyysi}
+
+\subsection{Aihemallit}
 
 \section{Keskustelu}
 
