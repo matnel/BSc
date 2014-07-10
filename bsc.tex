@@ -112,7 +112,9 @@ CSS = Computational Social Science, ML = Machine Learning, IE = Information Extr
 
 \end{table}
 
-Koska käytössä olleet menetelmät olivat varsin vähäiset suhteessa yllä esitettyihin, varsin laajoihin kuvauksiin laskennallisesta yhteiskuntatieteestä, on syytä tarkastella muitakin julkaisuja, erityisesti Social Science Computer Review:tä (SSCR) tietojenkäsittelytieteen ja yhteiskuntatieteen yhteisenä lehtenä. Vaikkei kyseessä ole erityisesti politiikan tutkimuksen lehti, lehden menetelmät ovat sovellettavissa myös politiikan tutkimukseen. Edelleen simulaatiomallien määrä suhteissa muihin menetelmiin on suurehko, mutta erityisalan lehdessä on edustettuina myös muita laskennallisen yhteiskuntatieteen töitä. Jälleen simulaatioiden käyttö on yleisin käytössä oleva menetelmä, tiedon louhinna teemana alla nostetaan esille erilaisia menetelmiä tekstiaineistojen analysoimiseksi, näitä käsitellään tarkemmin kappaleessa
+Koska käytössä olleet menetelmät olivat varsin vähäiset suhteessa yllä esitettyihin, varsin laajoihin kuvauksiin laskennallisesta yhteiskuntatieteestä, on syytä tarkastella muitakin julkaisuja, erityisesti Social Science Computer Review:tä (SSCR) tietojenkäsittelytieteen ja yhteiskuntatieteen yhteisenä lehtenä. Vaikkei kyseessä ole erityisesti politiikan tutkimuksen lehti, lehden menetelmät ovat sovellettavissa myös politiikan tutkimukseen. Edelleen simulaatiomallien määrä suhteissa muihin menetelmiin on suurehko, mutta erityisalan lehdessä on edustettuina myös muita laskennallisen yhteiskuntatieteen töitä. Jälleen simulaatioiden käyttö on yleisin käytössä oleva menetelmä, tiedon louhinna teemana alla nostetaan esille erilaisia menetelmiä tekstiaineistojen analysoimiseksi, näitä käsitellään tarkemmin kappaleessa \ref{sec:textanalysis}.
+
+Lisäksi kappaleessa \ref{unsupervised} nostetaan esille ohjaamattoman oppimisen \textit{(unsupervised learning)} menetelmiä, joita on havaittu kirjallisuuskatsauksen ulkopuolisessa kansainvälisessä vertaisarvioidussa kirjallisuudessa kahden vuoden seurannan aikana. Nostan esille esitettyjä menetelmiä uusina avauksina, joita voitaisiin laskennallisessa yhteiskuntatieteessä soveltaa laajemminkin, vaikkei ne nyt havaitussa kirjallisuuskatsauksessa nousseet selkeästi esille.
 
 %% On myös syytä perustella tutkimusaiheen relevanttius sekä yhteiskuntatieteellisen että teknillistieteellisen näkökulman kautta. Eräs syy laskennallisten menetelmien yleistymiseen on laskennan resurssien saavutettavuus \cite{z,x}, minkä johdosta erilaisia menetelmiä nostetaan esille usein. Uudet laajat tietovarastot, niin
 
@@ -170,7 +172,25 @@ Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast
 \todo{Toinen framework?}
 
 
+\section{Tekstin analysointi}
+\label{sec:textanalysis}
+
+Yllä olevissa laskennallisissa menetelmissä on käytetty määrällistä aineistoa, mutta laskennallisia menetelmiä käytetään myös laadullisen aineiston -- erityisesti tekstin -- tarkastelussa.
+
+%% Public Sentiment and Critical Framing in Social Media Content During the 2012 US Presidential Campaign
+
+%% Visualizing Situational Data: Applying Information Fusion for Detecting Social-Ecological Events
+
+%% Data mining - New challenges for statisticians
+
+
+\subsection{Sentimenttianalyysi}
+
+\subsection{Aihemallit}
+
+
 \section{Sääntöjen ja ryhmien löytäminen}
+\label{unsupervised}
 
 \citet{Jurek2013} soveltavat koneoppimista 271 valtion demokratian tilan tarkastelussa. He nostavat esille, että koneoppimisen soveltaminen mahdollistaa selittävien tekijöiden muutoksien valitsemisen vapaammin kuin perinteisten tilastollisten mentelmien soveltaminen. Heidän mallinsa löysi yhteensä 210 sääntöä, jotka vaikuttavat demokratian tilaan.
 
@@ -197,20 +217,6 @@ Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien m
 
 k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. \todo{pseudokoodia?} Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoon perustuva k-means klusterointi.
 
-\section{Tekstin analysointi}
-
-Yllä olevissa laskennallisissa menetelmissä on käytetty määrällistä aineistoa, mutta laskennallisia menetelmiä käytetään myös laadullisen aineiston -- erityisesti tekstin -- tarkastelussa.
-
-%% Public Sentiment and Critical Framing in Social Media Content During the 2012 US Presidential Campaign
-
-%% Visualizing Situational Data: Applying Information Fusion for Detecting Social-Ecological Events
-
-%% Data mining - New challenges for statisticians
-
-
-\subsection{Sentimenttianalyysi}
-
-\subsection{Aihemallit}
 
 \section{Keskustelu}
 
