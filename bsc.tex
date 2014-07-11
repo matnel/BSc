@@ -150,9 +150,8 @@ Agenttipohjaisen mallinnuksen lisäksi satunnaistekijöitä voidaan huomioida Mo
 \subsection{Agenttipohjainen malli}
 
 \begin{figure}
-\includegraphics[height=6cm]{images/agenttimalli.png} 
-\caption{Agenttipohjainen simulaatio}
-\cite{Macal2009} mukaan.
+\includegraphics[height=3cm]{images/agenttimalli.png} 
+\caption{Agenttipohjainen simulaatio \citet{Macal2009} mukaan}
 \end{figure}
 
 Agenttipohjaisesissa malleissa (\textit{agent-based models, ABM}) mallinnetaan yhteisön toimintaa yksittäisten toimijoiden kautta. Kukin toimija, eli agentti, on yksilöllinen toimintaheuristiikka, tai prefrenssifunktio. Tämän preferenssifunktion sekä mahdollisen satunnaisfuntion avulla määritellään agentin tila seuraavalla ajanhetkellä: \begin{equation}\mathcal{T}_{i,(t+1)} = \mathcal{P}( \mathcal{T}_{i,t} ) + \varepsilon \label{abm:yhtälö}\end{equation} Toistamalla sama simulaatio järjestelmän kaikille agenteille, voidaan määrittää järjestelmän tila ajanhetkellä $t+1$ ajanhetken $t$ perusteella. Luonnollisesti preferenssifuntio $\mathcal{P}$ voi ottaa huomioon myös muiden agenttien toimeinpiteet ja tästä syntyneen järjestelmän tilan tehdessään päätöstä tulevasta tilasta \citep[esimerkiksi][]{Bonabeau2002}. \todo{toinen lähde?} Mallinnusprosessia siis joudutaan etukäteen määrittelemään merkittäviä muuttujia, joka \citet{Gilbert1993} mukaan helpottaa teorioiden muodostamista ja testaamista: simuloidussa malleissa kun ei voida ottaa huomioon kaikki yhteiskunnallista ilmiötä kuvaavia muuttujia.
@@ -171,13 +170,24 @@ Agenttipohjaisen simulaation toteutukseen on olemassa useita erilaisia valmiita 
 
 Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast-ympäristöä. RePast sallii useamman kielen käytön simulaation kehityksessä, mikä on mahdollistanut erilaisten välineiden ja kirjastojen käytön kehityksessä \cite{North2006}, kuten esimerkiksi Javan käytön. Esimerkki Java-pohjaisesta RePast-mallista on liitteessä \ref{appedix:repast}, RePast-ympäristön hyödyn havaitsee valmiista koodista, jotka liittyvät simulaation pohjaan, siinä tehtävään etsintään ja liikkumiseen sekä todennäköisyysjakaumien käsittelyyn. Lisäksi merkitsemällä (\textit{annotate}), voidaan erikseen merkitä kuinka usein kyseinen agentti suorittaa oman preferenssifunktionsa.
 
-\todo{Toinen framework?}
-
 \subsection{Monte Carlo--simulointi}
 
 
 \section{Tekstin analysointi}
 \label{sec:textanalysis}
+
+Numeerisen aineiston lisäksi yhteiskuntatieteissä työskennellään usein tekstiaineiston kanssa, kuten haastatteluiden, viranomaistekstien sekä nykyisin myös sosiaalisen median tuotoksien kanssa. Perinteisesti aineiston analyysi on suoritettu lukemalla tekstejä ja tekemällä tästä päätelmiä, kuitenkin tämä on varsin raskasta ja onkin toivottavissa, että tietokoneistetusti tekstin luokittelua voitaisiin systematisoida.
+
+\citet{groshek2013public} arvioivat Yhdysvaltojen vuoden 2012 presidentin vaalien aikaista viestintää sosiaalisessa mediassa. Aineistona heillä oli yli 1.4 miljoonaa viestiä, osa Facebookissa ja osa Twitterissä -- mikä kertoo tarpeesta soveltaa laskennallista menetelmää analyysissä. Analyysi suoritettiin laskemalla sanojen lukumääriä ja termejä, joihin sanat olivat yhteydessä. Erityisesti kirjoittajat tarkastelivat, kuinka ehdokkaan vastustajasta puhuttiin ehdokkaan Facebook- ja Twitter-sivuilla ja havaitsivat, ettei vastustajasta puhuttu merkittävästi negatiivisemmin kuin ehdokkaasta. Laskennallisesti kyseessä ei ole erityisen mielenkiintoinen ongelma: kuten kuvasta \ref{fig:wordnet} nähdään, analyysi perustuu sanojen ilmenemiseen toistensa kanssa ja tämän pohjalta laskettuihin todennäköisyyksiin.
+
+\begin{figure}
+\includegraphics[height=8cm]{images/word_net.png} 
+\caption{Barack Obaman sosiaalisen median sivuiden perusteella luotu kuva sanoista \citep{groshek2013public}}
+\label{fig:wordnet}
+\end{figure}
+
+Laskennallisesti 
+
 
 %% Public Sentiment and Critical Framing in Social Media Content During the 2012 US Presidential Campaign
 
@@ -187,6 +197,8 @@ Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast
 
 
 \subsection{Sentimenttianalyysi}
+
+\subsection*{Työkalut}
 
 \subsection{Aihemallit}
 
@@ -235,6 +247,8 @@ k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekk
 %% Pearson2011
 
 %% bloomquist2006comparison A Comparison of Agent-Based Models of Income Tax Evasion
+
+%% "But the computer said!" - Credible uses of computational modeling in public sector decision making
 
 \subsection{Työskentely monitieteellisesti}
 
