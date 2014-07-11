@@ -198,10 +198,13 @@ Ohjaamattomassa oppimisessa \textit{(unsupervised learning)} ei ole opetusjaksoa
 
 \subsection{Sentimenttianalyysi}
 
+Esitellyissä artikkeleissa käytössä oli ohjattuun oppimiseen perustuva sentimenttianalyysi.
+
 \subsection*{Työkalut}
 
-\subsection{Aihemallit}
+\subsection{Teemojen luokittelu}
 
+Toisin kuin yllä esitetty sentimenttianalyysi, teemojen luokittelu on ohjaamatonta koneoppimista, jonka voi yksinkertaisimmillaan rakentaa latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuen. Ideana on siis, että aineistolla on piilossa olevia tekijöitä, joita voidaan havainnoida välillisesti aineistosta \citep{Blei2010}. 
 
 \section{Sääntöjen ja ryhmien löytäminen}
 \label{unsupervised}
@@ -221,7 +224,6 @@ Ohjaamatonta koneoppimista voi lähestyä useilla erilaisilla menetelmillä, kut
 \subsection{Assosiaatiosäännöt}
 
 Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, että ne selittävät mahdollisimman suuren osan aineistossa havaituista eroista. Kustakin säännöstä lasketaan erikseen sen selitysaste, mutta myös luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä \citep[485--586]{Hastie2009}. Eräs algoritmi sääntöjen muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Apriori laskee eri sääntökombinaatioiden frekvenssin aineistosta, ja tällä perusteella määrittelee mitkä säännöt ovat tarpeeksi yleisiä yleistämiseksi. \todo{pseudoalgoritmin esittely? pitäisi linkata jotenkin laskennan tulos luottamukseen ja lifteihin}
-
 
 \subsection{Klusterointi}
 
