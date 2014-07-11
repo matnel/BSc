@@ -14,7 +14,7 @@
 \usepackage{algorithm}
 
 \usepackage{listings}
-
+\usepackage{color}
 
 \usepackage{caption}
 \usepackage{subcaption}
@@ -106,7 +106,7 @@ EJPR  & 0 & 0 & 0 &  2 & 0 \\
 SSCR & 12 & 3 & 0 & 46 & 4  \\
 \hline
 \end{tabular}
-\caption{Hakuosumat kirjallisuudesta} \\
+\caption{Hakuosumat kirjallisuudesta}
 CSS = Computational Social Science, ML = Machine Learning, IE = Information Extraction, SIM = Simulation, DM = Data Mining
 \label{kirjallisuuskataus}
 
@@ -186,15 +186,15 @@ Numeerisen aineiston lisäksi yhteiskuntatieteissä työskennellään usein teks
 \label{fig:wordnet}
 \end{figure}
 
-Laskennallisesti 
+Laskennallisesti mielenkiintoisempaa on tekstin sisällön merkitysten arviointi, yksinkertaisimmillaan tekstin positiivisuuden ja negatiivisuuden arviointi. Jatkaen poliitikoiden sosiaalisen median tutkimusta, \citet{park2011networked} arvioivat poliitikkojen verkkoprofiilissa esiintyviä positiivisia je negatiivisia sanoja, ja havaitsevat että oppositiopuolueiden sivuilla oli enemmän positiivisia viestejä hallituspuolueisiin verrattuna. Myöskin \citet{tumasjan2010election} ovat kiinnostuneet poliitikkoihin liittyvistä viesteistä Twitterissä, he sentimenttianalyysin perusteella päättelevät, että puolueen kannattajat puhuvat kilpailevista poliitikoista negatiivisemmin kuin omasta ehdokkaastaan, mutta positiivisissa viesteissä ei nähdä selvää eroa.
 
+Lisäksi laskennallisesti on mahdollista erottaa aiheita ja teemoja -- mikä vastaa ihmistyötä vastaavassa laadullisen tutkimuksen prosessissa. \citet{levy2013driving} ovat analysoineet lainsäädäntöön liittyneitä kommentteja ja laskennallisesti eroittaneet aineistosta teemoja, joita kommenteissa käsiteltiin. He analysoivat tarkemmin, ketkä ovat lähettäneet kommentteja ja havaitsevat eroja lobbausorganisaatioiden ja yksittäisten kansalaisten teemojen välillä. Tällä perusteella he arvioivat lainsäädäntötyön läpinäkyvyyttä ja lobbaustahojen merkittävyyttä lainsäädäntötyössä.
 
-%% Public Sentiment and Critical Framing in Social Media Content During the 2012 US Presidential Campaign
+\subsection*{Ohjattu ja ohjaamaton oppiminen}
 
-%% Visualizing Situational Data: Applying Information Fusion for Detecting Social-Ecological Events
+Sekä sentimenttianalyysi että teemojen luokittelu (\textit{topic modeling}) ovat koneoppimiseen perustuvia algoritmeja, mutta niiden toimintaperiaateet ovat erilaisia. Sentimenttianalyysi perustuu ohjattuun oppimiseen \textit{(supervised learning)}, jossa kutakin syötettä vastaa tulos (${ (s_1, t_1), \ldots , (s_n, t_n) }$). Esimerkiksi sentimenttianalyysissä tekstille on määritelty sitä vastaava sentimenttilukuarvo. Opetusvaiheessa ohjattu oppiminen laskee eri syötteiden välisiä yhteyksiä ja tällä tavalla päättelee, mitkä tekijät vaikuttavat kuhunkin tulokseen, täsmällisemmin optimoi funktiota $g$ syötteiden joukolta $\mathcal{S}$ tulosjoukolle $\mathcal{Y}$, siten että virhe on mahdollisimman pieni. Opetuksen jälkeen ohjattu oppiminen pystyy itsenäisesti arvioimaan mielivaltaista syötettä vastaavan tulosarvon käyttäen funktiota $g$.
 
-%% Data mining - New challenges for statisticians
-
+Ohjaamattomassa oppimisessa \textit{(unsupervised learning)} ei ole opetusjaksoa, eikä aineistosta siis etukäteen tarvitse luokitella osittain. Sen sijaan näissäkin tapauksissa pyritään löytämään aineistoista virhefunktion kannalta paras tulos, mutta eri ohjaamattoman oppimisen menetelmissä virhefunktioden tyypit eroavat toisistaan.
 
 \subsection{Sentimenttianalyysi}
 
@@ -215,8 +215,6 @@ Laskennallisesti
 %% Marketing Segmentation Through Machine Learning Models An Approach Based on Customer Relationship Management and Customer Profitability Accounting
 
 %% Kaufman and Rousseeuw (1990)
-
-\subsection*{Ohjattu ja ohjaamaton oppiminen}
 
 Ohjaamatonta koneoppimista voi lähestyä useilla erilaisilla menetelmillä, kuten assosiaatiosäännöillä, dimensioiden vähentämisellä (\textit{dimensionality reduction}) sekä  klusteroimalla \citet[485--586]{Hastie2009}\footnote{\citet[43--138]{Hastie2009} nostavat myös regressiomallit koneoppimisen osana, mutta kuten johdannossa argumentoin kyseessä on yhteiskuntatieteen näkökulmasta enemmänkin perinteinen laskennallinen menetelmä, enkä siksi esittele tarkemmin näiden yksinkertaisten mallien käyttöä osana laskennallista yhteiskuntatiedettä.}. \todo{Lisää johdattelua?}
 
