@@ -172,11 +172,10 @@ Näiden kriteerien pohjalta \citet{Tobias2004} päätyvät suosittelemaan RePast
 
 \subsection{Monte Carlo--simulointi}
 
-
 \section{Tekstin analysointi}
 \label{sec:textanalysis}
 
-Numeerisen aineiston lisäksi yhteiskuntatieteissä työskennellään usein tekstiaineiston kanssa, kuten haastatteluiden, viranomaistekstien sekä nykyisin myös sosiaalisen median tuotoksien kanssa. Perinteisesti aineiston analyysi on suoritettu lukemalla tekstejä ja tekemällä tästä päätelmiä, kuitenkin tämä on varsin raskasta ja onkin toivottavissa, että tietokoneistetusti tekstin luokittelua voitaisiin systematisoida.
+Numeerisen aineiston lisäksi yhteiskuntatieteissä työskennellään usein tekstiaineiston kanssa, kuten haastatteluiden, viranomaistekstien sekä nykyisin myös sosiaalisen median tuotoksien kanssa. Perinteisesti aineiston analyysi on suoritettu lukemalla tekstejä ja tekemällä tästä päätelmiä, kuitenkin tämä on varsin raskasta ja onkin toivottavissa, että tietokoneistetusti tekstin luokittelua voitaisiin systematisoida -- \citet{Grimmer2013} korostavatkin, että laskennalliset menetelmät toimivat tässä kohtaa ihmisen apuna, mutta tarkoitus ei ole korvata ihmistä analysoinnissa. Tekstin analysointiin käytettäviä menetelmiä on useita, niin ohjatun kuin ohjaamattoman, koneoppimisen tekniikoita \citep[esimerkiksi][]{Grimmer2013}, kirjallisuuskatsauksen perusteella tekstiainestoa on analysoitu sentimenttianalyysillä ja aiheiden tunnistuksella.
 
 \citet{groshek2013public} arvioivat Yhdysvaltojen vuoden 2012 presidentin vaalien aikaista viestintää sosiaalisessa mediassa. Aineistona heillä oli yli 1.4 miljoonaa viestiä, osa Facebookissa ja osa Twitterissä -- mikä kertoo tarpeesta soveltaa laskennallista menetelmää analyysissä. Analyysi suoritettiin laskemalla sanojen lukumääriä ja termejä, joihin sanat olivat yhteydessä. Erityisesti kirjoittajat tarkastelivat, kuinka ehdokkaan vastustajasta puhuttiin ehdokkaan Facebook- ja Twitter-sivuilla ja havaitsivat, ettei vastustajasta puhuttu merkittävästi negatiivisemmin kuin ehdokkaasta. Laskennallisesti kyseessä ei ole erityisen mielenkiintoinen ongelma: kuten kuvasta \ref{fig:wordnet} nähdään, analyysi perustuu sanojen ilmenemiseen toistensa kanssa ja tämän pohjalta laskettuihin todennäköisyyksiin.
 
@@ -198,13 +197,19 @@ Ohjaamattomassa oppimisessa \textit{(unsupervised learning)} ei ole opetusjaksoa
 
 \subsection{Sentimenttianalyysi}
 
-Esitellyissä artikkeleissa käytössä oli ohjattuun oppimiseen perustuva sentimenttianalyysi.
+Esitellyissä artikkeleissa käytössä oli yksinkertainen, sanoihin ja niiden lukumäärään perustuva sentimenttianalyysi, jossa sanoja luokitellaan jollain asteikolla ja tätä kautta muodostetaan sanakirja, jota voidaan käyttää analysoimisessa \citep{pennebaker2001linguistic,Thelwall2010}\footnote{Sentimenttianalyysiä voidaan myös tehdä myös ohjaamattomasti, tavoite on aina löytää tekstiaineistosta piirteitä joiden perusteella voidaan ennustaa kielen käyttäytymistä. Käytettyjen menetelmien joukko on laaja, esimerkiksi Bayesilaisia luokittimia ja tukivektorikoneita on vertailtu \citep{Pang02a,Pang05a,Thelwall2010}. Koska sentimenttianalyysiä tutkitaan aktiivisesti, tässä työssä esittelen yksinkertaisen toteutuksen sentimenttianalyysistä.}. Analyysiä voidaan täydentää käyttämällä laajemmin kielellisiä ominaisuuksia, kuten huutomerkejä sekä perättäisille sanoja, sekä niiden vaikutusta yksittäisten termien määrään. On myös mahdollista koneellisesti testata erilaisia yhdistelmiä ominaisuuksia, ja verrata näin saatuja arvoja ihmisen suorittamaan luokitukseen lauseiden osalta, pyrkien optimoimaan eri ominaisuuksien painoarvoja siten, että virhe ihmisen tekemän luokituksen välillä on mahdollisimman pieni \citep{Thelwall2010}.
+
+Sentimenttianalyysi perustuu siis tekstin piirteisiin \textit{(features)} tarkasteluun, laskennallisesti mielenkiintoisempi -- tosin, \citet{Thelwall2010}\footnote{\citet{Thelwall2010} on keskittynyt sosiaalisen median viestien analysointiin MySpace--palvelussa, ja samaa menetelmää on sovellettu myös löydetyssä kirjallisuudessa.} aineiston kohdalla vähemmän tarkka -- menetelmä on tukivektorikoneiden \textit{(support vector machine)} käyttö luokittamiseen. Tukiverkkokoneet perustuvat piirrevektoreiden ja (opetettujen) arvojen pareihin ($\{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n) \}$, missä $x_i \in \mathbb{R}^n$ on tukivektori ja $y_i$ opetettu arvo), jotka muodostavat pinnan. Tukivektorikoneen ideana on jakaa tämä pinta mahdollisimman selvästi eri ryhmiin piirrevektoreihin liittyvällä funktiolla $f(x_i) = \beta x_i + \beta$, jolloin kyseessä on jälleen virheen vähentämiseen perustuva iteratiivinen laskentaprosessi \citep{Hastie2009}.
 
 \subsection*{Työkalut}
+
+Agenttipohjaisten simulaatioiden kohdalla korostettiin dokumentaatiota, avoimuutta ja muokattavuutta eri ympäristöjen arvioinnissa \citep{Tobias2004}. Sentimenttianalyysissä samanlaiset kriteerit ovat mielekkäitä: kuitenkin, koneoppimista soveltavissa lähestymistavoissa mielekästä on myös arvioida koneopitun aineiston laatua ja luotettavuutta. Esimerkiksi \citet{Thelwall2010} kehittämä SentiStrength tarjoaa valmiina käytettäväksi englannin kielelle soveltuvan sanakirjan, mutta mahdollistaa myös omien painotusten kehittämisen ja optimoinnin.
 
 \subsection{Teemojen luokittelu}
 
 Toisin kuin yllä esitetty sentimenttianalyysi, teemojen luokittelu on ohjaamatonta koneoppimista, jonka voi yksinkertaisimmillaan rakentaa latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuen. Ideana on siis, että aineistolla on piilossa olevia tekijöitä, joita voidaan havainnoida välillisesti aineistosta \citep{Blei2010}. 
+
+\subsection*{Työkalut}
 
 \section{Säänönmukaisuuksien ja ryhmien löytäminen}
 \label{unsupervised}
