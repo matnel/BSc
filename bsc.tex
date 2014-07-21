@@ -207,9 +207,7 @@ Agenttipohjaisten simulaatioiden kohdalla korostettiin dokumentaatiota, avoimuut
 
 \subsection{Teemojen luokittelu}
 
-Toisin kuin yllä esitetty sentimenttianalyysi, teemojen luokittelu on ohjaamatonta koneoppimista, jonka voi yksinkertaisimmillaan rakentaa latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuen. Ideana on siis, että aineistolla on piilossa olevia tekijöitä, joita voidaan havainnoida välillisesti aineistosta \citep{Blei2010}. 
-
-\subsection*{Työkalut}
+Toisin kuin yllä esitetty sentimenttianalyysi, teemojen luokittelu on ohjaamatonta koneoppimista, jonka voi yksinkertaisimmillaan rakentaa latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuen. Ideana on siis, että aineistolla on piilossa olevia aiheita, joita voidaan havainnoida välillisesti sanojen esiintymisen perusteella dokumenteissa \citep{Blei2010,Blei2003}. LDAn erityispiirre on, että jokainen dokumentti edustaa useampia aiheita, mutta jokainen sana kuuluu vain yhteen aiheeseen. Aiheille ja sanoille arvioidaan esiintymistodennäköisyydet, joiden perusteella arvioidaan esiintyykö ryhmä sanoja tietyissä aineistoissa suuremmalla todennäköisyydellä kuin arvioidut esiintymistodennäköisyydet antaisivat olettaa, ja tämän perusteella ryhmitellään sanoja teemojen perusteella.
 
 \section{Säänönmukaisuuksien ja ryhmien löytäminen}
 \label{unsupervised}
