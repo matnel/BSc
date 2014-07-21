@@ -1,3 +1,5 @@
+.DS_Store
+
 bsc.aux
 bsc.bbl
 bsc.blg
@@ -7,3 +9,4 @@ bsc.out
 bsc.pdf
 bsc.synctex.gz
 bsc.toc
+
