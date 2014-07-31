@@ -252,7 +252,6 @@ Viimeisenä laskennallisten menetelmien ryhmänä esittelen ohjaamattoman oppimi
 
 Muita ohjaamattoman oppimisen menetelmiä on muuttujien dimensioiden vähentäminen (\textit{dimensionality reduction}), pääkomponenttianalyysi sekä klusterointianalyysi \citet[485--586]{Hastie2009}. Dimensioiden vähentäminen esimerkiksi pääkomponenttianalyysin avulla on yleisesti tiedossa oleva menetelmä jo nyt \citep[esimerkiksi][615--651]{metsamuuronen}, mutta klusterointimenetelmistä $k-means$--mentetelmä on toistaiseksi tuntemattomampi politiikan tutkimuksen piirissä.
 
-
 %% Marketing Segmentation Through Machine Learning Models An Approach Based on Customer Relationship Management and Customer Profitability Accounting
 
 %% Kaufman and Rousseeuw (1990)
@@ -261,21 +260,31 @@ Muita ohjaamattoman oppimisen menetelmiä on muuttujien dimensioiden vähentämi
 
 \subsection{Assosiaatiosäännöt}
 
-Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, että ne selittävät mahdollisimman suuren osan aineistossa havaituista eroista. Kustakin säännöstä lasketaan erikseen sen selitysaste, mutta myös luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä \citep[485--586]{Hastie2009}. Eräs algoritmi sääntöjen muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Kuten algoritmi \ref{algo:apriori} näyttää, Apriori laskee eri sääntökombinaatioiden frekvenssin aineistosta ja riippuen vaaditusta tuesta joko hyväksyy sääntökombinaation osaksi löydettyjä sääntöjä tai hylkää sen. Uudet sääntöehdokkaat luodaan yksinkertaisesti käymällä parametrina annettu $n$ alkion kokoisten sääntöjen joukko läpi ja lisäämällä siihen mahdolliset $n+1$ pituisen sääntöjen joukot aineistoista.
+Assosisaatiosäännöt perustuvat aineiston ominaisuuksien $x_1, x_2, \ldots, x_n$ käsittelyyn siten, että voidaan löytää yhteyksiä ominaisuuksien välillä, esimerkiksi havaitaan sääntönä: esimerkiksi $(x_h, x_i, x_j) \Rightarrow x_k$. Ongelmana on löytää näistä säännöistä merkittävät ja mielenkiintoiset, koska sääntöjen määrä kasvaa $2^n$-nopeudella. Jotta tämä ongelma olisi ratkaistavissa, kustakin säännöstä lasketaan erikseen sen selitysast, luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä \citep[485--586]{Hastie2009}.
+
+Eräs algoritmi sääntöjen muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Kuten algoritmi \ref{algo:apriori} näyttää, Apriori laskee eri sääntökombinaatioiden frekvenssin aineistosta ja riippuen vaaditusta tuesta joko hyväksyy sääntökombinaation osaksi löydettyjä sääntöjä tai hylkää sen. Uudet sääntöehdokkaat luodaan yksinkertaisesti käymällä parametrina annettu $n$ alkion kokoisten sääntöjen joukko läpi ja lisäämällä siihen mahdolliset $n+1$ pituisen sääntöjen joukot aineistoista.
 
 \begin{algorithm}
 \begin{algorithmic}
-\State $S_1 \gets$  \{ kaikki yhden alkion kokoiset säännöt \}
+\State Olkoon $\mathcal{S}$ kaikki aineistossa esiintyvät siirtymät
+\State Olkoon $\varepsilon$ vaadittu vähimmäistuki mielenkiintoisena pitämiseen
+
+\State $S_1 \gets $ \{ kaikki yhden alkion kokoiset merkittävät säännöt \}
 \State $i \gets 2$
 
 \While{ $S_{i-1} \neq \emptyset$ }
-  \State $E_i \gets$ ehdokkaat( $S_{i-1}$ )
 
-	\ForAll{siirtyma \in $E_i$}
-		\State e.maara $ += |\{e' \in E_i | e' = siirtyma \}|$
+  \State $E_i \gets \{ a \cup \{b\} \mid a \in S_{k-1} \land b \in \bigcup S_{k-1} \land b \not \in a \} $
+
+	\ForAll{$s in \mathcal{S}$}
+	    \ForAll{ehdokas $\in \{ e | e \in E_i \land e \subseteq s \}$}
+		   \State $e$.maara $ \gets + 1$
+		\EndFor
+
 	\EndFor 
-  
-  \State $S_i \gets \{ e \in E_i |$ e.maara $\geq$ vähimmäistuki $\}$
+
+		\State $S_i \gets \{ e | e \in E_i \land e.\mathrm{maara} \geq \varepsilon \}$
+		\State $i \gets +1$
 \EndWhile
 
 \Return $\bigcup_i S_i$
@@ -287,20 +296,22 @@ Assosisaatiosäännöt perustuvat aineiston ominaisuuksien käsittelyyn siten, e
 
 \subsection{Klusterointi}
 
-Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien muuttujien määrää vähennetään etsimällä muuttujaryhmiä, joiden kautta aineiston vaihtelua selitetään mahdollisimman hyvin. Yhteiskuntatietelijöiden yleisesti tuntema menetelmä tähän on pääkomponenttianalyysi (\textit{principal component analysysi, PCA}), jonka kautta aineisto jaetaan selittäviin faktoreihin. Laskennalliset menetelmät mahdollistavat myös aineiston samankaltaisten alkioiden esittämisen ryhminä, eli klusteroinnin. Menetelmiä klusterointiin on useita, esimerkiksi $k-means$ sekä spektriklusterointi\todo{Spectral Clustering} \citep[485--586]{Hastie2009}.
+Dimensioiden vähentämisellä viitataan prosessiin, jossa ilmiötä kuvaavien muuttujien määrää vähennetään etsimällä muuttujaryhmiä, joiden kautta aineiston vaihtelua selitetään mahdollisimman hyvin. Yhteiskuntatietelijöiden yleisesti tuntema menetelmä tähän on pääkomponenttianalyysi (\textit{principal component analysysi, PCA}), jonka kautta aineisto jaetaan selittäviin faktoreihin. Laskennalliset menetelmät mahdollistavat myös aineiston samankaltaisten alkioiden esittämisen ryhminä, eli klusteroinnin. Menetelmiä klusterointiin on useita, esimerkiksi $k$-means sekä spektriklusterointi \citep[485--586]{Hastie2009}.
 
-k-means-menetelmä pyrkii, nimensä mukaisesti, löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille keskiarvopisteille aiheuttaa mahdollisimman pienen virheen (Algoritmi \ref{algo:kmeans}). Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoon perustuva k-means klusterointi.
+Klusteroinnissa syötteenä on joukko alkioita $\{ x_1, x_2, \ldots, x_n \}$ joka halutaan jakaa $k$hon ryhmään. Yksinkertaisuuden vuoksi oletamme, että $x_i \in \mathbb{R}^n$, jolloin vektorien välisiä etäisyyksiä voidaan laskea selkeästi; k-means menetelmä on toki yleistettävissä yleiselle etäisyysfunktiolle $\mathcal{D}(a,b)$.
+
+Nimensä mukaisesti $k$-means löytämään keskiarvon kullekkin klusterille ja valitsemaan klustereiden sijainnit siten, että havaintojen sijoittaminen näille klusteripisteille minimoi virheen (Algoritmi \ref{algo:kmeans}). Täsmällisemmin siis minimoidaan $\sum_i ||x_i - k_{x_i}||^2$, missä $k_{x_i}$ on alkiota $x_i$ vastaava klusteri. Kyseessä on iteratiivinen algoritmi, jota toistetaan kunnes klustereiden sijainnit eivät vaihdu. Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmittämistä, jolloin klusterit korostavat samankaltaisten ominaisuuksien joukkoja paremmin kuin keskiarvoon perustuva k-means klusterointi.
 
 
 \begin{algorithm}
 \begin{algorithmic}
 
-\State Jaetaan aineisto alustavasti klusteriryhmiin $c_1, c_2, \ldots c_n$ ja etsitään jokaiselle alkiolle $e$ alkiota lähinnä oleva klusteri
+\State Jaetaan aineisto alustavasti klusteriryhmiin $k_1, k_2, \ldots k_k$ ja etsitään jokaiselle alkiolle $e$ alkiota lähinnä oleva klusteri
 
 \While{klusterien paikat eivät merkittävästi muutu}
 
-\State lasketaan klusteriryhmille uusi paikka minimoimalla klusteriin kuuluvien alkioiden etäisyys uudesta paikasta, eli uusi paikka $c'_1$ minimoi klusteriin kuuluvien alkioiden $e_{1}, e_{2}, \ldots e_{n}$ etäisyyden klusterista
-\State uudelleenmääritellään alkoiden kuuluminen klusteriryhmiin tarkastamalla, mitä klusteria $c$ lähinnä alkio $e$ on
+\State lasketaan jokaiselle klusterille $k$ uusi paikka $k'$ laskemalla keskiarvo klusteriin kuuluvien alkioiden $x_{1}, x_{2}, \ldots x_{m}$ paikoista, eli $k' = \frac{1}{m} \sum_{i=1}^m x_i $
+\State uudelleenmääritellään alkoiden kuuluminen klusteriryhmiin tarkastamalla, mitä klusteria $k'_i$ lähinnä alkio $x$ on, eli $\min_{i=1}^k || x - k'_i || ^ 2$
 
 \EndWhile
 
