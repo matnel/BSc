@@ -233,15 +233,15 @@ Kyseessä on ohjatun oppimisen menetelmä, eli tukiverkkokoneet perustuvat piirr
 
 Optimointiongelma voidaan myös esittää muodossa $ \min \frac{1}{2} || \beta ||^2 $, kuitenkin huomioiden että $ y_i( \beta x_i + \beta_0 ) \geq 1$. Ongelmaan voidaan soveltaa neliöllistä optimointia, jolla ratkaistaan pienin mahdollinen $\beta$n arvo. Jos oletamme, että $\varepsilon \neq 0$, ongelmaan  sovelletaan Lagrangen menetelmää, edelleen jos oletuksia opetettujen arvojen joukosta ei tehdä on tarpeen siirtyä käyttämään kernelifunktiota \citep{Hastie2009}.
 
-\subsection*{Työkalut}
-
-Agenttipohjaisten simulaatioiden kohdalla korostettiin dokumentaatiota, avoimuutta ja muokattavuutta eri ympäristöjen arvioinnissa \citep{Tobias2004}. Sentimenttianalyysissä samanlaiset kriteerit ovat mielekkäitä: kuitenkin, koneoppimista soveltavissa lähestymistavoissa mielekästä on myös arvioida koneopitun aineiston laatua ja luotettavuutta. Esimerkiksi \citet{Thelwall2010} kehittämä SentiStrength tarjoaa valmiina käytettäväksi englannin kielelle soveltuvan sanakirjan, mutta mahdollistaa myös omien painotusten kehittämisen ja optimoinnin.
-
 \subsection{Teemojen luokittelu}
 
 Toisin kuin yllä esitetty sentimenttianalyysi, teemojen luokittelu on ohjaamatonta koneoppimista, jonka voi yksinkertaisimmillaan rakentaa latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuen. Ideana on siis, että aineistolla on piilossa olevia aiheita, joita voidaan havainnoida välillisesti sanojen esiintymisen perusteella dokumenteissa \citep{Blei2010,Blei2003}. LDAn erityispiirre on, että jokainen dokumentti edustaa useampia aiheita, mutta jokainen sana kuuluu vain yhteen aiheeseen. Aiheille ja sanoille arvioidaan esiintymistodennäköisyydet, joiden perusteella arvioidaan esiintyykö ryhmä sanoja tietyissä aineistoissa suuremmalla todennäköisyydellä kuin arvioidut esiintymistodennäköisyydet antaisivat olettaa, ja tämän perusteella ryhmitellään sanoja teemojen perusteella.
 
-\section{Säänönmukaisuuksien ja ryhmien löytäminen}
+\subsection*{Työkalut}
+
+Agenttipohjaisten simulaatioiden kohdalla korostettiin dokumentaatiota, avoimuutta ja muokattavuutta eri ympäristöjen arvioinnissa \citep{Tobias2004}. Sentimenttianalyysissä samanlaiset kriteerit ovat mielekkäitä: kuitenkin, koneoppimista soveltavissa lähestymistavoissa mielekästä on myös arvioida koneopitun aineiston laatua ja luotettavuutta. Esimerkiksi \citet{Thelwall2010} kehittämä SentiStrength tarjoaa valmiina käytettäväksi englannin kielelle soveltuvan sanakirjan, mutta mahdollistaa myös omien painotusten kehittämisen ja optimoinnin.
+
+\section{Säännönmukaisuuksien ja ryhmien löytäminen}
 \label{unsupervised}
 
 Viimeisenä laskennallisten menetelmien ryhmänä esittelen ohjaamattoman oppimisen menetelmiä, jotka pyrkivät löytämään säännönmukaisuuksia numeerisesta aineistosta. Esimerkiksi politiikan tutkimuksen perinteinen teema on selittää eroja valtioiden välillä, esimerkiksi demokratian tilan arviointia taustamuuttujien perusteella. \citet{Jurek2013} jatkavat tätä perinteistä linjaa selittämällä valtioiden demokaattisuutta Freedom House --aineiston ja taustamuuttujien, kuten uskonnon ja demokratian keston perusteella. Menetelmänä he käyttävät työssään assosiaatiosääntöjen hakua laskennallisesti, jonka perusteella he löysivät yhteensä 210 erilaista sääntöä. Lisäksi he nostavat esille, että koneoppimisen soveltaminen mahdollistaa selittävien tekijöiden muutoksien valitsemisen vapaammin kuin perinteisten tilastollisten mentelmien soveltaminen, jossa tarkasteltavien sääntöjen määrä on yleisesti merkittävästi pienempi.
