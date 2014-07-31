@@ -55,7 +55,16 @@ Laskennallisten menetelmien käyttö tutkimusmetelmänä muiden tieteenalojen os
 
 Viimeaikoina tutkimuskentällä -- varsinkin tietojenkäsittelytieteilijöiden osalta -- on noussut esille suurien tietomassojen käsittely laskennallisesti \textit{(big data analysis)}. Erityisesti viimeaikaisen innostuksen taustalla on niin Internetin kautta \citep{adamic05,notess02} kuin elinympäristöstä kerättyjen aineistojen \citep{eagle06,oulasvirta12} kerääminen sekä tarjoaminen muille tutkijoille. Esimerkiksi sosiologian ja sosiaalipsykologian tutkimuksessa mahdollisuus seurata ihmisten välistä viestintää, sijaintia ja muita tietoja \textit{(reality mining)} mahdollistaa esimerkiksi ystävyyssuhteiden tarkastelun uusilla tavoilla \cite{Karikoski2011a,Nelimarkka2012}. Kuitenkin suurien tietomassojen perusteella tehtävää tutkimusta kohtaan on nostettu esille myös kritiikkiä. Esimerkiksi \citet{Boyd2012a} huomauttavat, että suuret tietomassojen laatu ja hyödyllisyys riippuvat aineistossa käytössä olevista mittareista sekä ympäristön ja taustalla olevien ilmiöiden ymmärtämisestä.
 
-Suurten tietomassojen laskennallinen käsittely on vain osa laskennallisten menetelmien mahdollisista käyttösovelluksista yhteiskuntatieteessä: laskennallisia menetelmiä voidaan käyttää myös perinteisen aineiston käsittelyn tukena ja apuna, käyttäen menetelmiä pienten aineistojen analyysin apuna\todo{Pertti viite?}. Yhteiskuntatieteissä, kuten politiikan tutkimuksessa, käsitellään useita erilaisia tutkimuskysymyksiä joihin on mahdollista vastata laskennallisesti Yhteiskuntatieteissä käsitellään monia erilaisia tutkimuskysymyksiä, joiden analyysissä myös laskennalliset menetelmät ovat sovellettavissa. Tässä työssä yhteiskuntatieteiden osalta keskitytään politiikan tutkimukseen, jolloin kirjallisuuden määrää rajataan merkittävästi. Ennen tarkempaa paneutumista laskennallisuuteen ja tietojenkäsittelytieteeseen on tarpeen esittää politiikan tutkimuksen oppihistoriaa ja nykyisin vakiintuneita menetelmiä lyhyesti, jolloin laskennalliset menetelmät voidaan sijoittaa osaksi politiikan tutkimuksen traditiota.
+Suurten tietomassojen laskennallinen käsittely on vain osa laskennallisten menetelmien mahdollisista käyttösovelluksista yhteiskuntatieteessä: laskennallisia menetelmiä voidaan käyttää myös perinteisen aineiston käsittelyn tukena ja apuna, käyttäen menetelmiä pienten aineistojen analyysin apuna \citep{pertti}. Yhteiskuntatieteissä, kuten politiikan tutkimuksessa, käsitellään useita erilaisia tutkimuskysymyksiä joihin on mahdollista vastata laskennallisesti. Laskennallisten menetelmien mielenkiintoisuutta voidaan perustella kahdella eri syyllä
+
+\begin{enumerate}
+\item laskennalliset menetelmät mahdollistavatuusien menetelmien käytön ja mahdollistavat näin  \textit{uudenlaisten kysymysten} kysymisen
+\item laskennalliset menetelmät \textit{tehostavat} aineiston käsittelyä ja näin esimerkiksi vähentävät tarvetta manuaaliselle työlle
+\end{enumerate}
+
+Erityisesti mielenkiintoisuutta nyt lisää se, että tietotekniikka on jokapäiväistynyt ja laskennallisten menetelmien soveltaminen on yleistynyt muiden tieteiden parissa. Laskennallisten menetelmien soveltaminen on myös nousemassa oleva trendi yhteiskuntatieteissä, osittain työtä tehdään tietojenkäsittelytieteen puolelta -- mutta enevemissä määrin myös yhteiskuntatieteilijät soveltavat laskennallisia menetelmiä. Tarpeen onkin pyrkiä esittelemään laskennallisia menetelmiä ymmärrettävästi myös suomen kielellä.
+
+Kirjallisuuden rajaamiseksi tässä työssä yhteiskuntatieteiden osalta keskitytään politiikan tutkimukseen. Ennen tarkempaa paneutumista laskennallisuuteen ja tietojenkäsittelytieteeseen on tarpeen esittää politiikan tutkimuksen oppihistoriaa ja nykyisin vakiintuneita menetelmiä lyhyesti, jolloin laskennalliset menetelmät voidaan sijoittaa osaksi politiikan tutkimuksen traditiota. Tämän jälkeen esitellään olemassa olevia määritelmiä laskennalliselle yhteiskuntatieteelle ja esitellään kirjallisuuskatsauksen tuloksia laskennallisten menetelmien käytöstä yhteiskuntatieteissä. Kolme menetelmäryhmää esitellään tarkemmin niin sovellutusten kuin laskennan pohjalta: simulaatiot, tekstianalyysi ja säännönmukaisuuksien etsiminen. Kirjallisuuskatsauksen perusteella keskustellaan laskennallisen yhteiskuntatieteen haasteista.
 
 %% Tällöin perinteiset ei-laskennalliset menetelmät eivät välttämättä sovellu tutkimukseen, ja samaan aikaan laajat aineistot mahdollistavat aiemmin haastavina pidettyjen menetelmien käytön -- esimerkiksi verkosto-analyysin ongelma on ollut aineiston vaikea keräys \citep{a}. Tällöin myös rahoittajien korostama poikkitieteellinen lähestymistapa \citep[60]{tieteentila12} on ensinnäkin mahdollinen resurssien myötä ja toisaalta välttämätön, koska perinteiset lähestymistavat eivät käytä hyödykseen mahdollisuuksia joita laskennallisten tieteiden kehitys on luonut.
 
@@ -170,11 +179,11 @@ Agenttipohjaisesissa malleissa (\textit{agent-based models, ABM}) mallinnetaan y
 
 Toisena hyötynä \citet{Bonabeau2002} mainitsee agenttipohjaisen mallin helpomman tulkittavuuden. Hän arvioi, että yksilökeskeinen kuvaus toiminnasta on selkeämpi kuin erilaiset tilasiirtymäkuvaukset tai prosessikuvaukset. Tämän takia hän arvioi agenttiohjaisen mallien olevan helpommin asiantuntijoiden tulkittavissa ja arvioitavissa, jolloin mallit ovat selkeämmin validoitavissa. Lisäksi \citet{Bonabeau2002} kritisoi keskisuureiden käyttämistä ilmöiden kuvaamiseksi, koska näissä tilanteissa ääriarvot eivät ole nähtävissä ja keskisuureet tasoittavat vaihtelua.
 
-\subsection*{Mikrosimulaatiot}
+\subsection{Mikrosimulaatiot}
 
 Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  (\textit{microsimulation model}). Sen toiminta ei merkittävästi eroa esitetystä yhtälöstä \ref{abm:yhtälö}, eli malli pyrkii ennustamaan yksilön toimintaa. Kuitenkin taustalla oleva lähestymistapa eroaa. Agenttipohjaisen malli pyrkii luomaan ilmiön parametrien avulla ja tämän jälkeen tarkastelemaan luomiseen tarvittuja parametreja, kun taas mikrosimulaatiossa ilmiöön liittyvät taustamuuttujat ja niiden väliset määritellään etukäteen \citep[58--59]{Gilbert2005}. Yksilökeskeisen mallinnustavan takia pidän mikrosimulaatioita ja agenttipohjaisia malleja samankaltaisina agenttipohjaisina simulaatioina, vaikka niiden toiminnan yksityiskohdat eroavatkin toisistaan.
 
-\subsection*{Tit for tat}
+\subsection{Tit for tat}
 
 Kirjallisuuskatsauksessa ei esiintynyt erästä agenttipohjaisen simulaation varianttia, jossa mallinnetaan erilaisia käyttätysmismalleja ja niiden vaikutusta lopputulokseen. Alan klassikko on \citet{Axelrod01031980} simulaatio yhteistoiminnasta, nimenomaisesti siitä kuinka agenttien kannattaa rankaista toisiaan sääntöjen rikkomisesta. Mallinnus perustui rationaalisen valinnan olettamuksiin yksilöistä oman edun edun tavoittelijoina ja koko asetelman pohjalla onkin peliteorian soveltaminen vuorovaikutuksen analyysiin.
 
@@ -198,7 +207,7 @@ Numeerisen aineiston lisäksi yhteiskuntatieteissä työskennellään usein teks
 \citet{groshek2013public} arvioivat Yhdysvaltojen vuoden 2012 presidentin vaalien aikaista viestintää sosiaalisessa mediassa. Aineistona heillä oli yli 1.4 miljoonaa viestiä, osa Facebookissa ja osa Twitterissä -- mikä kertoo tarpeesta soveltaa laskennallista menetelmää analyysissä. Analyysi suoritettiin laskemalla sanojen lukumääriä ja termejä, joihin sanat olivat yhteydessä. Erityisesti kirjoittajat tarkastelivat, kuinka ehdokkaan vastustajasta puhuttiin ehdokkaan Facebook- ja Twitter-sivuilla ja havaitsivat, ettei vastustajasta puhuttu merkittävästi negatiivisemmin kuin ehdokkaasta. Laskennallisesti kyseessä ei ole erityisen mielenkiintoinen ongelma: kuten kuvasta \ref{fig:wordnet} nähdään, analyysi perustuu sanojen ilmenemiseen toistensa kanssa ja tämän pohjalta laskettuihin todennäköisyyksiin.
 
 \begin{figure}
-\includegraphics[scale=1]{images/word_net.png} 
+\includegraphics[scale=.75]{images/word_net.png} 
 \caption{Barack Obaman sosiaalisen median sivuiden perusteella luotu kuva sanoista \citep{groshek2013public}}
 \label{fig:wordnet}
 \end{figure}
