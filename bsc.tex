@@ -235,11 +235,15 @@ Optimointiongelma voidaan myös esittää muodossa $ \min \frac{1}{2} || \beta |
 
 \subsection{Teemojen luokittelu}
 
-Toisin kuin yllä esitetty sentimenttianalyysi, teemojen luokittelu on ohjaamatonta koneoppimista, jonka voi yksinkertaisimmillaan rakentaa latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuen. Ideana on siis, että aineistolla on piilossa olevia aiheita, joita voidaan havainnoida välillisesti sanojen esiintymisen perusteella dokumenteissa \citep{Blei2010,Blei2003}. LDAn erityispiirre on, että jokainen dokumentti edustaa useampia aiheita, mutta jokainen sana kuuluu vain yhteen aiheeseen. Aiheille ja sanoille arvioidaan esiintymistodennäköisyydet, joiden perusteella arvioidaan esiintyykö ryhmä sanoja tietyissä aineistoissa suuremmalla todennäköisyydellä kuin arvioidut esiintymistodennäköisyydet antaisivat olettaa, ja tämän perusteella ryhmitellään sanoja teemojen perusteella.
+Teemojen luokittelussa syötteenä on joukko teksidokumenteja $D_1, D_2, \ldots, D_n$ ja tavoitteena on eritellä mistä teemoista $t_1, t_2, \ldots, t_m$ kyseiset dokumentit käsittelivät. Kyseessä on ohjaalamttoman koneoppimisen muoto, eli aiheita ei tarvitse etukäteen määritellä -- ja mikä tärkeintä, ei ole tarpeen yhdistää dokumentteja ja aiheita opetusaineiston luomiseksi. Ratkaisu perustuu kunkin tekstidokumentin sanojen ja niiden todennäköisyyksien analysoimiseen.
+
+Menetelmänä teemojen luokittelussa voidaan käyttä latenttien Dirchlet-allokaatioihin \textit{(latent Dirchlet allocation, LDA)} perustuva todennäköisyyslaskenta. Ideana on siis, että aineistolla on piilossa olevia teemoja, joita voidaan havainnoida välillisesti sanojen esiintymisen perusteella dokumenteissa \citep{Blei2010,Blei2003}.
 
 \subsection*{Työkalut}
 
 Agenttipohjaisten simulaatioiden kohdalla korostettiin dokumentaatiota, avoimuutta ja muokattavuutta eri ympäristöjen arvioinnissa \citep{Tobias2004}. Sentimenttianalyysissä samanlaiset kriteerit ovat mielekkäitä: kuitenkin, koneoppimista soveltavissa lähestymistavoissa mielekästä on myös arvioida koneopitun aineiston laatua ja luotettavuutta. Esimerkiksi \citet{Thelwall2010} kehittämä SentiStrength tarjoaa valmiina käytettäväksi englannin kielelle soveltuvan sanakirjan, mutta mahdollistaa myös omien painotusten kehittämisen ja optimoinnin.
+
+Sekä tukivektorikoneisiin että teemojen luokitteluun löytyy useita avoimen lähdekoodin toteutuksia. Koska kyseessä on olemassa olevien menetelmien laskennalliset toteutukset, on mielekästä tarjota niistä  \citet{hornik2006support} esittelevät neljän erilaisen tukivektorikoneita käsittelevää kirjastoa, ja päätyvät suosittelemaan suorituskykynsä puolesta \texttt{kernlab}-pakettia sekä \texttt{e1071}-paketissa olevaa, libsvm-kirjastoon perustuvaa toteutusta. Myös aiheiden tunnistukseen on olemassa R-paketti \texttt{topicmodels}.
 
 \section{Säännönmukaisuuksien ja ryhmien löytäminen}
 \label{unsupervised}
