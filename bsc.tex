@@ -185,7 +185,7 @@ Toisena hyötynä \citet{Bonabeau2002} mainitsee agenttipohjaisen mallin helpomm
 
 \subsection{Mikrosimulaatiot}
 
-Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  (\textit{microsimulation model}). Sen toiminta ei merkittävästi eroa esitetystä yhtälöstä \ref{abm:yhtälö}, eli malli pyrkii ennustamaan yksilön toimintaa. Kuitenkin taustalla oleva lähestymistapa eroaa. Agenttipohjaisen malli pyrkii luomaan ilmiön parametrien avulla ja tämän jälkeen tarkastelemaan luomiseen tarvittuja parametreja, kun taas mikrosimulaatiossa ilmiöön liittyvät taustamuuttujat ja niiden väliset määritellään etukäteen \citep[58--59]{Gilbert2005}. Yksilökeskeisen mallinnustavan takia pidän mikrosimulaatioita ja agenttipohjaisia malleja samankaltaisina agenttipohjaisina simulaatioina, vaikka niiden toiminnan yksityiskohdat eroavatkin toisistaan.
+Agenttipohjaisten mallien lisäksi on mahdollista käyttää mikrosimulaatiota  (\textit{microsimulation model}). Sen toiminta ei merkittävästi eroa agenttipohjaisen simulaation periaatteista, eli malli pyrkii ennustamaan yksilön toimintaa. Kuitenkin taustalla oleva lähestymistapa eroaa. Agenttipohjaisen malli pyrkii luomaan ilmiön parametrien avulla ja tämän jälkeen tarkastelemaan luomiseen tarvittuja parametreja, kun taas mikrosimulaatiossa ilmiöön liittyvät taustamuuttujat ja niiden väliset määritellään etukäteen \citep[58--59]{Gilbert2005}. Yksilökeskeisen mallinnustavan takia pidän mikrosimulaatioita ja agenttipohjaisia malleja samankaltaisina agenttipohjaisina simulaatioina, vaikka niiden toiminnan yksityiskohdat eroavatkin toisistaan.
 
 \subsection{Tit for tat}
 
@@ -244,7 +244,7 @@ Esitellyissä artikkeleissa käytössä oli yksinkertainen, sanoihin ja niiden l
 
 Sentimenttianalyysi perustuu siis tekstin piirteisiin \textit{(features)} tarkasteluun, laskennallisesti mielenkiintoisempi -- tosin, \citet{Thelwall2010}\footnote{\citet{Thelwall2010} on keskittynyt sosiaalisen median viestien analysointiin MySpace--palvelussa, ja samaa menetelmää on sovellettu myös löydetyssä kirjallisuudessa.} aineiston kohdalla vähemmän tarkka -- menetelmä on tukivektorikoneiden \textit{(support vector machine)} käyttö luokittamiseen. Tukivektorikoneita voidaan käyttää myös muuhun tekstuaalisen aineiston käsittelyyn \citep[esimerkiksi][]{Weber2012}.
 
-Kyseessä on ohjatun oppimisen menetelmä, eli tukiverkkokoneet perustuvat piirrevektoreiden ja (opetettujen) arvojen pareihin. Olkoon siis aineistona \newline $\{ (x_1, y_1), (x_2, y_2), \ldots , (x_n, y_n) \}$ missä $x_i \in \mathbb{R}^n$ on piirrevektori ja $y_i \in \mathbb{Z}$ on opetettu arvo. Kyseessä on lineaarinen luokitin, joka siis jakaa aineisto tasoilla, siten että arvot $y$ ovat mahdollisimman hyvin tasojen muodostamissa ryhmissä, mikä intuitiivisesti voidaan käsittää siten että tasojen väliin jää mahdollisimman paljon tilaa.
+Kyseessä on ohjatun oppimisen menetelmä, eli tukivektorikoneet perustuvat piirrevektoreiden ja (opetettujen) arvojen pareihin. Olkoon siis aineistona \newline $\{ (x_1, y_1), (x_2, y_2), \ldots , (x_n, y_n) \}$ missä $x_i \in \mathbb{R}^n$ on piirrevektori ja $y_i \in \mathbb{Z}$ on opetettu arvo. Kyseessä on lineaarinen luokitin, joka siis jakaa aineisto tasoilla, siten että arvot $y$ ovat mahdollisimman hyvin tasojen muodostamissa ryhmissä, mikä intuitiivisesti voidaan käsittää siten että tasojen väliin jää mahdollisimman paljon tilaa.
 
 \begin{figure}
 \includegraphics[height=5cm]{images/svm.png} 
@@ -301,7 +301,7 @@ Eräs algoritmi kattavien muodostamiseksi on \citet{Agrawal1994a} esittelemä Ap
 
   \State $E_i \gets \{ a \cup \{b\} \mid a \in S_{k-1} \land b \in \bigcup S_{k-1} \land b \not \in a \} $
 
-	\ForAll{$s in \mathcal{S}$}
+	\ForAll{$s \in \mathcal{S}$}
 	    \ForAll{ehdokas $\in \{ e | e \in E_i \land e \subseteq \mathcal{s} \}$}
 		   \State $e$.maara $ \gets + 1$
 		\EndFor
@@ -314,7 +314,7 @@ Eräs algoritmi kattavien muodostamiseksi on \citet{Agrawal1994a} esittelemä Ap
 
 \Return $\bigcup_i S_i$
 \end{algorithmic}
-\caption{apriori}
+\caption{Apriori}
 \label{algo:apriori}
 \end{algorithm}
 
