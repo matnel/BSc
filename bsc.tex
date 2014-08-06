@@ -256,7 +256,7 @@ Yksinkertaisuuden vuoksi oletamme tässä esityksessä, että $y_i \in \{ -1, 1 
 
 Täsmällisesti siis, tavoite on määrittää $\beta$ ja $\beta_0$ luokittimessa sign$( x \beta + \beta_0)$. Edelleen, koska halutaan että ryhmien väliin jäävä marginaali $M$ on mahdollisimman iso. On siis tarkoitus löytää $\max M$ kuitenkin niin, että $y_i( x_i \cdot \beta + \beta_0 ) \geq M - \varepsilon$. $\varepsilon$ on lisätty yhtälöön sallimaan osan alkioista olemaan marginaalin sisällä, yksinkertaisuuden vuoksi tässä esityksessä $\varepsilon = 0$.
 
-Yllä kuvattu optimointiongelma voidaan myös esittää muodossa $$ \min \frac{1}{2} || \beta ||^2,~\mathrm{kuitenkin~huomioiden}~y_i( \beta \cdot x_i + \beta_0 ) \geq 1$$. Ongelmaan voidaan soveltaa neliöllistä optimointia, jolla ratkaistaan pienin mahdollinen $\beta$n arvo. Jos hyväksymme, että $\varepsilon \neq 0$, ongelmaan  sovelletaan Lagrangen menetelmää, edelleen jos jakoa ei suoriteta lineaariluokittimella on tarpeen siirtyä käyttämään kernelifunktiota \citep{vapnik1982estimation,cortes95,Hastie2009}.
+Yllä kuvattu optimointiongelma voidaan myös esittää muodossa $$ \min \frac{1}{2} || \beta ||^2,~\mathrm{kuitenkin~huomioiden}~y_i( \beta \cdot x_i + \beta_0 ) \geq 1$$ Ongelmaan voidaan soveltaa neliöllistä optimointia, jolla ratkaistaan pienin mahdollinen $\beta$n arvo. Jos hyväksymme, että $\varepsilon \neq 0$, ongelmaan  sovelletaan Lagrangen menetelmää, edelleen jos jakoa ei suoriteta lineaariluokittimella on tarpeen siirtyä käyttämään kernelifunktiota \citep{vapnik1982estimation,cortes95,Hastie2009}.
 
 \subsection{Teemojen luokittelu}
 
@@ -333,7 +333,7 @@ Vastaavasti spektriklusterointi perustuu samankaltaisten ominaisarvojen ryhmitt�
 \begin{algorithm}
 \begin{algorithmic}
 
-\State Jaetaan aineisto alustavasti klusteriryhmiin $k_1, k_2, \ldots k_k$ ja etsitään jokaiselle alkiolle $e$ alkiota lähinnä oleva klusteri
+\State Jaetaan aineisto alustavasti klusteriryhmiin $k_1, k_2, \ldots k_k$ ja etsitään jokaiselle alkiolle $x_i$ alkiota lähinnä oleva klusteri
 
 \While{klusterien paikat eivät merkittävästi muutu}
 
