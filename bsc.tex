@@ -213,11 +213,11 @@ Havainnollistetaan yllä kuvattua konkreettisen yksinkertaisen esimerkin avulla.
 
 Kunkin piirrevektorin alkion ehdollinen todennäköisyys $p( s_{x,j} | t)$ opitaan annetusta aineistosta havaintojen perusteella.
 
-Ohjaamattomassa oppimisessa aineistoa pyritään ryhmittelemään säännönmukaisuuksien perusteella. Käytössä siis on syöte $\mathcal{S}$ ja tavoitteena voi olla kuvata aineistoa akseleilla $k_1, k_2, \ldots , k_n$ tai jakaa aineisto ryhmiin $K_1, K_2, \ldots, K_n$. Toisin kuin ohjatussa oppimisessa, ei kuitenkaan pyritä luomaan yleistettävää funktiota -- vaan ohjaamaton oppiminen suoritetaan annetulle aineistolle ja kuvaa vain sitä aineistoa.Esimerkkinä tästä menetelmästä on pääkomponenttianalyysi, jota esitellään lyhyesti seuraavaksi.
+Ohjaamattomassa oppimisessa aineistosta pyritään löytämään säännönmukaisuuksia. Mielivaltainen syöte $\mathcal{S}$ voidaan esimerkikis kuvata akseleilla $k_1, k_2, \ldots , k_n$ tai jakaa ryhmiin $K_1, K_2, \ldots, K_n$. Toisin kuin ohjatussa oppimisessa, ei aineistosta kuitenkaan pyritä luomaan yleistettävää funktiota -- vaan tulokset esittelevät aina tiettyä aineistoa. Esimerkkinä tästä lähestymistavasta on pääkomponenttianalyysi, jota esittelen lyhyesti seuraavaksi.
 
-Pääkomponenttianalyysissä syötteenä $\mathcal{S}$ käytetään monidimensionaalista aineistoa $X \in \mathbb{R}^{ n \times m}$, joka on esitetty matriisimuodossa selkeyden vuoksi: siinä on $n$ kappaletta havaintoja, joissa kussakin on $m$ kuvaavaa muuttujaa. Tehtävänä on löydetää aineiston rakennetta kuvaavat akselit $p = ( p_1, p_2, \ldots, p_n )$, missä kukin akseli $p \in \mathbb{R}^m$ edelleen kuvaa aineiston $m$  muuttujaa uudella tavalla. Näin siis akselit $p$ muodostavat uuden matriisin, ja tämä matriisi (sekä siis sen vektorit) ortogonaalisia lineaarikombinaatioita alkuperäisestä matriisista $X$. Näin siis pääkomponenttianalyysi projisoi matriisin $X$ uudelle koordinaatistolle.
+Pääkomponenttianalyysin syöte $\mathcal{S}$ on monidimensionaalinen aineisto $X \in \mathbb{R}^{ n \times m}$. Käytössä on matriisimuoto selkeyden vuoksi: matriisissa on $n$ kappaletta havaintoja, joissa kussakin on $m$ kuvaavaa muuttujaa. Tehtävänä on löytää aineiston rakennetta kuvaavat akselit $p = ( p_1, p_2, \ldots, p_n )$, missä kukin akseli $p_i \in \mathbb{R}^m$ kuvaa aineiston $m$ muuttujaa uudellleen. Täsmällisemmin, kukin akselin $p$ projisoi alkuperäisen rivin uudelle orgononaaliselle koordinaatiostolle. Näiden akselien $p_1, p_2, \ldots, p_n$ avulla voidaan muodostaa myös $n \times m$ kokoinen matriisi, joka siis rakentuu alkuperäisestä matriisista $X$ lineaarikombinaatioiden avulla.
 
-Täsmällisemmin prosessissa muutetaan jokainen $X$ rivi $x_{(i)}$ $p_i$n avulla ja muodostaa uusi matriisi $X'$. Nyt arvojen välillä ei ole korrelaatiota, eli ne ovat ortogonaaliset. Ensimmäinen komponentti $p_1$ valitaan siten, että tällä saadaan selitettyä mahdollisimman suuren osan aineistosta ja sen vaihtelusta, eli $$\max_{||p||=1} \sum_i^n (x_i \cdot p_1 )^2.$$ Myöhemmät komponentit valitaan poistamalla jo löydetyt komponentit matriisista ja jälleen etsimällä tästä uudesta matriisista suurin selittävä  komponentti kuten edellä.
+Tarkastellaan täsmällisemmin proessia jolla nämä akselit löydetään aineistosta.Täsmällisemmin prosessissa muutetaan jokainen $X$ rivi $x_{(i)}$ $p_i$n avulla ja muodostaa uusi matriisi $X'$. Nyt arvojen välillä ei ole korrelaatiota, eli ne ovat ortogonaaliset. Ensimmäinen komponentti $p_1$ valitaan siten, että tällä saadaan selitettyä mahdollisimman suuren osan aineistosta ja sen vaihtelusta, eli $$\max_{||p||=1} \sum_i^n (x_i \cdot p_1 )^2.$$ Myöhemmät komponentit valitaan poistamalla jo löydetyt komponentit matriisista ja jälleen etsimällä tästä uudesta matriisista suurin selittävä  komponentti kuten edellä.
 
 Pääkomponenttianalyysin mielenkiinto on, että on mahdollista valita pienempi joukko akseleita ($p' = (p_1, p_2, \ldots, p_{n'})$, missä $n' < n$) kuvaamaan aineistoa. Tehtäväksi tuleekin valita $n'$ siten, että neliöllinen virhe täydellisen kuvauksen ja osittaisen kuvauksen välillä on hyväksyttävissä, eli $||X-X'||^2 < $ hyväksymiskynnys.
 
@@ -287,38 +287,44 @@ Muita ohjaamattoman oppimisen menetelmiä on muuttujien dimensioiden vähentämi
 
 Assosisaatiosäännöt perustuvat aineiston ominaisuuksien $x_1, x_2, \ldots, x_n$ perustuvat, että voidaan löytää yhteyksiä ominaisuuksien välillä. Yleisesti ominaisuudet ovat binäärisiä, eli $x_i \in \{ 0, 1\}$. Tavoitteena on löytää sääntöjä muuttujien välisistä suhteista: esimerkiksi $$A \Rightarrow B, \mathrm{~jossa~} A, B \in \mathcal{P}( \{ x_1, x_2, \ldots , x_n \} ) \mathrm{~ja~} A \cap B = \emptyset.$$\footnote{$\mathcal{P(X)}$ viittaa joukon $X$ potenssijoukkoon, eli joukkoon jossa on kaikki joukon $X$ osajoukot alkioina.} Eli, $A$ ja $B$ koostuvat ominaisuuksien joukosta siten, ettei niillä ole yhteisiä ominaisuuksia. Sääntöjen määrä kasvaa $2^n$-nopeudella, jolloin haaste on löytää säännöistä mielenkiintoiset, kattavat ja luotettavat säännöt. Jotta tämä ongelma olisi ratkaistavissa, kustakin säännöstä lasketaan erikseen sen selitysaste, luottamus kyseisen säännön yleistettävyyteen ja säännön nosto (\textit{lift}), jolla arvioidaan löydetyn säännön merkittävyyttä \citep[485--586]{Hastie2009}.
 
-Eräs algoritmi kattavien muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Kuten algoritmi \ref{algo:apriori} näyttää, Apriori laskee eri sääntökombinaatioiden esiitymisen aineistosta ja riippuen vaaditusta tuesta joko hyväksyy sääntökombinaation osaksi kattavia sääntöjä tai hylkää sen. Uudet sääntöehdokkaat luodaan yksinkertaisesti käymällä aiemmat $n$ alkion kokoisten sääntöjen joukko läpi ja lisäämällä siihen mahdollinen $n+1$ pituisen sääntöjen joukko, kunnes $n+1$ pituisia mahdollisia sääntöjä ei enää ole.
+Ratkaistaan ongelma sääntöjen löytämisestä kahdessa vaiheessa: ensiksi muodostetaan kattavat säännöt ja näistä valikoidaan milenekiintoiset ja luotettavat myöhemmin. Aineistona sääntöjen löytämiseksi on ryhmä rivejä $r_1, r_2, \ldots , r_n$, joista kukin sisältää arvon kullekkin ominaisuudelle, eli kukin rivi on muotoa $[ x_1, x_2, \ldots, x_n ]$. Lisäksi käytössä on kaksi valittua kynnysarvoa: $\varepsilon$ kuvaamaan vähimmäismäärää havaintoja kattavuudelle ja $\delta$ kuvaamaan vähimmäistä tukea luotettavuudelle ($\varepsilon, \delta \in \mathbb{R}$).
+
+Eräs algoritmi kattavien muodostamiseksi on \citet{Agrawal1994a} esittelemä Apriori. Kuten algoritmi \ref{algo:apriori} näyttää, Apriori laskee eri sääntökombinaatioiden esiitymisen aineistosta ja riippuen vaaditusta tuesta joko hyväksyy sääntökombinaation osaksi kattavia sääntöjä tai hylkää sen. Uudet sääntöehdokkaat luodaan yksinkertaisesti käymällä aiemmat $n$ alkion kokoisten sääntöjen joukko läpi ja lisäämällä siihen mahdollinen $n+1$ pituisen sääntöjen joukko, kunnes $n+1$ pituisia mahdollisia sääntöjä ei enää ole. Algoritmin jälkeen kerättynä on siis kattavat joukot, joista on tarpeen valita edelleen luotettavat ja mielenkiintoiset säännöt.
 
 \begin{algorithm}
-\begin{algorithmic}
-\State Olkoon $\mathcal{S}$ kaikki aineistossa esiintyvät siirtymät, eli kaikki aineiston rivit [$x1, x2, \ldots, x_n$]
-\State Olkoon $\varepsilon$ vaadittu vähimmäistuki mielenkiintoisena pitämiseen
 
-\State $S_1 \gets $ \{ kaikki yhden alkion kokoiset säännöt \}
+Merkitään $K_n$ on $n$ alkion pituisten kattavien joukkojen joukko. \\
+Merkitään $E_n$ on $n$ alkion pituisten mahdollisten kattavien joukkojen joukko, eli joukko ehdokkaita.\\
+Olkoon $\mathcal{S}$ kaikki aineistossa esiintyvät siirtymät, eli kaikki aineiston rivit $r_1, r_2, \ldots, r_n$\\
+
+\begin{algorithmic}
+\State $K_1 \gets $ \{ kaikki yhden alkion kokoiset kattavat joukot \}
 \State $i \gets 2$
 
-\While{ $S_{i-1} \neq \emptyset$ }
+\While{ $K_{i-1} \neq \emptyset$ }
 
-  \State $E_i \gets \{ a \cup \{b\} \mid a \in S_{k-1} \land b \in \bigcup S_{k-1} \land b \not \in a \} $
+  \State $E_i \gets \{ a \cup \{b\} \mid a \in K_{k-1} \land b \in \bigcup K_{k-1} \land b \not \in a \} $
 
 	\ForAll{$s \in \mathcal{S}$}
-	    \ForAll{ehdokas $\in \{ e | e \in E_i \land e \subseteq \mathcal{s} \}$}
+	    \ForAll{$e \in \{ e | e \in E_i \land e \subseteq \mathcal{S} \}$}
 		   \State $e$.maara $ \gets + 1$
 		\EndFor
 
 	\EndFor 
 
-		\State $S_i \gets \{ e | e \in E_i \land e.\mathrm{maara} \geq \varepsilon \}$
+		\State $K_i \gets \{ e | e \in E_i \land e.\mathrm{maara} \geq \varepsilon \}$
 		\State $i \gets +1$
 \EndWhile
 
-\Return $\bigcup_i S_i$
+\Return $\bigcup_i K_i$
 \end{algorithmic}
 \caption{Apriori}
 \label{algo:apriori}
 \end{algorithm}
 
-Algoritmin jälkeen kerättynä on siis kattavat joukot, joista on tarpeen valita edelleen luotettavat ja mielenkiintoiset säännöt. Tätä varten määritellään säännön $X$ tuki todennäköisyytenä, että aineistosta löytyy sekä ryhmä $X$, missä $X \in \mathcal{P}( \{ x_1, x_2, \ldots , x_n \} )$. Luottamus sääntöön määritellään tuen avulla, ja se normalisoi säännön esiintyvyyden suhteessa mahdollisiin esiintymisiin: luottamus($A \Rightarrow B) = \frac{ \mathrm{tuki}(A \cup B)}{ \mathrm{tuki}(A)}$, jälleen $A,B \in \mathcal{P}( \{ x_1, x_2, \ldots , x_n \} )$. Intuitiivisesti siis, jos aineistossa on paljon $A$ta, niin tällöin luotettavan säännön muodostamiseksi tarvitaan vahva evidenssi parista $(A,B)$, vastaavasti jos aineistossa on vähän $A$ta, ei paria $(A,B)$ vaadita niin useita. Kattavista joukoista lasketaan luottamus ja valinnaisen kynnyksen perusteella säännöistä epäluotettavat hylätään ja luotettavat jätetään käsittelyyn.
+Luotettavuuden päättämistä varten määritellään säännön $X$ tuki todennäköisyytenä, että aineistosta löytyy ryhmä $X$, missä $X \in \mathcal{P}( \{ x_1, x_2, \ldots , x_n \} )$. Luottamus sääntöön määritellään tuen avulla, ja se normalisoi säännön esiintyvyyden suhteessa mahdollisiin esiintymisiin: luottamus($A \Rightarrow B) = \frac{ \mathrm{tuki}(A \cup B)}{ \mathrm{tuki}(A)}$, jälleen $A,B \in \mathcal{P}( \{ x_1, x_2, \ldots , x_n \} )$. Intuitiivisesti siis, jos aineistossa on paljon $A$ta, niin tällöin luotettavan säännön muodostamiseksi tarvitaan vahva evidenssi parista $(A,B)$, vastaavasti jos aineistossa on vähän $A$ta, niin parin $(A,B)$ esiintyminen voi olla vähäisempää.
+
+Toteutuksena jälkimmäinen vaihe on varsin yksinkertainen: jokaiselle kattavan joukon ryhmälle lasketaan luottamus ja valitun kynnyksen $\delta$ perusteella joukoista hylätään epäluotettavaksi todetut säännöt. Nyt jäljellä on vain kattavat ja luotettavat säännöt.
 
 \subsection{Klusterointi}
 
